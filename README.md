@@ -204,9 +204,9 @@ rm -rf .git/modules/<path>
 
 See individual repositories for license information:
 - Anti-slop skills: [LICENSE](./LICENSE)
-- Humanizer: See [external/humanizer/README.md](external/humanizer/)
-- CC-Polymath: See [external/cc-polymath/LICENSE](external/cc-polymath/LICENSE)
-- Posit Skills: See [external/posit-skills/LICENSE](external/posit-skills/LICENSE)
+- Humanizer: See [blader/humanizer](https://github.com/blader/humanizer/blob/main/README.md#license)
+- CC-Polymath: See [rand/cc-polymath](https://github.com/rand/cc-polymath/blob/main/LICENSE)
+- Posit Skills: See [posit-dev/skills](https://github.com/posit-dev/skills/blob/main/LICENSE)
 
 ## Version History
 
