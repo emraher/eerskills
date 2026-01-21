@@ -317,10 +317,10 @@ The anti-slop skills are **quality enforcement tools** that work alongside any l
 
 | Learning Resource | Teaches | Anti-Slop Enforces |
 |-------------------|---------|-------------------|
-| posit/quarto/authoring | Quarto syntax & features | Reproducibility & quality standards |
-| posit/r-lib/cli | cli package structure | No generic error messages |
-| posit/r-lib/testing | testthat patterns | No generic test names |
-| posit/r-lib/lifecycle | Deprecation workflow | Clear documentation |
+| external/posit-skills/quarto/authoring | Quarto syntax & features | Reproducibility & quality standards |
+| external/posit-skills/r-lib/cli | cli package structure | No generic error messages |
+| external/posit-skills/r-lib/testing | testthat patterns | No generic test names |
+| external/posit-skills/r-lib/lifecycle | Deprecation workflow | Clear documentation |
 
 ### Complementary Use with Other Resources
 

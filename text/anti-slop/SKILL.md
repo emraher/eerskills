@@ -10,7 +10,7 @@ applies_to:
   - "**/*.rst"
 tags: [writing, documentation, technical-writing, clarity]
 related_skills:
-  - humanizer
+  - external/humanizer
   - r/anti-slop
   - python/anti-slop
 version: 2.0.0

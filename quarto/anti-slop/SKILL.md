@@ -13,7 +13,7 @@ related_skills:
   - r/anti-slop
   - python/anti-slop
   - text/anti-slop
-  - posit/quarto/authoring
+  - external/posit-skills/quarto/authoring
 version: 2.0.0
 ---
 
@@ -857,7 +857,7 @@ Comprehensive coverage in main document above covers:
 - **r/anti-slop** - For cleaning R code in chunks
 - **python/anti-slop** - For cleaning Python code in chunks
 - **text/anti-slop** - For cleaning prose sections
-- **posit/quarto/authoring** - For Quarto syntax and features
+- **external/posit-skills/quarto/authoring** - For Quarto syntax and features
 
 ### Tools
 
