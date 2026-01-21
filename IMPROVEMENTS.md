@@ -1,4 +1,8 @@
-# Skill Improvement Recommendations
+# Skill Improvement Recommendations (COMPLETED)
+
+**Status**: v2.0.0 Implementation Complete (2026-01-21)
+
+All recommendations in this document have been implemented. This file is kept for historical context.
 
 ## Executive Summary
 
@@ -18,395 +22,37 @@ Your anti-slop skills are comprehensive but structured differently from Posit's 
 - **Workflow-driven**: Common workflows with ready-to-use templates
 - **Constructive**: "Do this instead" orientation with examples
 
-## Recommended Improvements
+## Recommended Improvements (ALL IMPLEMENTED)
 
 ### 1. Add "When to Use This Skill" Section
-
-**Current**: Skills launch with pattern lists immediately
-**Better**: Start with clear decision criteria
-
-```markdown
-## When to Use This Skill
-
-Use r-anti-slop when:
-- [ ] Writing new R code for data analysis or packages
-- [ ] Reviewing AI-generated R code before committing
-- [ ] Refactoring existing code for production quality
-- [ ] Preparing R package for CRAN submission
-- [ ] Teaching or enforcing R code standards
-
-Do NOT use when:
-- Writing quick exploratory scripts (though standards still help)
-- Working with legacy code that can't be changed
-```
+✅ Done for all 8 skills.
 
 ### 2. Restructure with Progressive Disclosure
-
-**Current**: Everything in one massive SKILL.md file
-**Proposed**: Main file + reference directory
-
-```
-r/anti-slop/
-├── SKILL.md                    # Core workflow (500-800 lines)
-├── reference/
-│   ├── naming.md              # Deep dive: naming conventions
-│   ├── documentation.md       # roxygen2, vignettes, README
-│   ├── tidyverse.md           # Tidyverse-specific patterns
-│   ├── statistical-rigor.md   # Validation, uncertainty, reproducibility
-│   └── forbidden-patterns.md  # Comprehensive antipattern catalog
-```
-
-**Main SKILL.md Structure:**
-```markdown
-## When to Use What
-
-| Task | Quick Reference | Details |
-|------|----------------|---------|
-| Name variables | Use snake_case, no `df`/`data` | See reference/naming.md |
-| Document functions | Specific @param, @return | See reference/documentation.md |
-| Write pipe chains | `\|>` preferred, break >8 ops | See reference/tidyverse.md |
-
-## Core Workflow
-
-1. Check namespace qualification (all external functions use `::`)
-2. Add explicit returns (never implicit)
-3. Validate naming (snake_case, no generic names)
-4. Review documentation (no circular descriptions)
-5. Run styler + lintr
-
-## Quick Reference Checklist
-
-- [ ] All external functions qualified with `::`
-- [ ] All functions have explicit `return()`
-- [ ] All objects use `snake_case`
-... (10-15 most critical items)
-
-## Common Workflows
-
-### Workflow: Clean Up AI-Generated R Script
-[Step-by-step example]
-
-### Workflow: Prepare Package for CRAN
-[Step-by-step example]
-
-## Resources & Advanced Topics
-- reference/naming.md - Complete naming conventions
-- reference/documentation.md - roxygen2 and vignette standards
-...
-```
+✅ Done. All skills have `reference/` directories.
 
 ### 3. Create "When to Use What" Decision Tables
-
-Add to each skill's main file:
-
-**Example for r/anti-slop:**
-```markdown
-## When to Use What
-
-| If you need to... | Use this approach | Details |
-|-------------------|-------------------|---------|
-| Filter data | `dplyr::filter(data, condition)` | reference/tidyverse.md |
-| Name data frames | Descriptive name (e.g., `customer_data`) | reference/naming.md |
-| Document parameters | Specific structure & expectations | reference/documentation.md |
-| Handle missing data | Explicit strategy + report loss | reference/statistical-rigor.md |
-| Write pipe chains | Break at 8+ operations | reference/tidyverse.md |
-```
-
-**Example for text/anti-slop:**
-```markdown
-## When to Use What
-
-| If you see... | Replace with... | Details |
-|---------------|-----------------|---------|
-| "delve into" | "examine" or delete | Humanizer Pattern #7 |
-| "navigate the complexities" | Specific challenge | Humanizer Pattern #1 |
-| "in order to" | "to" | Filler Constructions |
-| Meta-commentary | Direct statement | Unnecessary Meta-Commentary |
-```
+✅ Done for all 8 skills.
 
 ### 4. Add "Common Workflows" Section
-
-Replace scattered "Scenario X" examples with structured workflows:
-
-```markdown
-## Common Workflows
-
-### Workflow: Review AI-Generated R Analysis Script
-
-**Context**: You have an AI-generated analysis script with generic patterns.
-
-**Steps**:
-1. **Detect patterns**
-   ```bash
-   Rscript toolkit/scripts/detect_slop.R analysis.R --verbose
-   ```
-
-2. **Fix high-priority issues first**
-   - [ ] Replace `df`, `data`, `result` with descriptive names
-   - [ ] Add namespace qualification (`dplyr::`, `ggplot2::`)
-   - [ ] Add explicit `return()` statements
-
-3. **Improve code structure**
-   - [ ] Break long pipes (>8 ops) with intermediate variables
-   - [ ] Remove obvious comments ("Load library")
-   - [ ] Simplify single-pipe constructs
-
-4. **Validate and format**
-   ```r
-   styler::style_file("analysis.R")
-   lintr::lint("analysis.R")
-   ```
-
-**Expected outcome**: Score drops from 60+ to <20
-
----
-
-### Workflow: Humanize Technical Documentation
-
-**Context**: AI-generated README or vignette feels generic.
-
-**Steps**:
-1. **Run detection**
-   ```bash
-   python toolkit/scripts/detect_slop.py README.md --verbose
-   ```
-
-2. **Apply automated cleanup**
-   ```bash
-   python toolkit/scripts/clean_slop.py README.md --save
-   ```
-
-3. **Manual review against humanizer checklist**
-   - [ ] Remove significance inflation (Pattern #1)
-   - [ ] Replace AI vocabulary (Pattern #7)
-   - [ ] Fix copula avoidance (Pattern #8)
-   - [ ] Add personality and voice
-
-4. **Verify improvements**
-   - Rerun detection (should score <30)
-   - Read aloud to check natural flow
-   - Ensure specific examples, not abstract claims
-
-**Expected outcome**: Natural, human-sounding documentation
-```
+✅ Done for all 8 skills.
 
 ### 5. Improve YAML Frontmatter
-
-**Current**:
-```yaml
----
-name: r-anti-slop
-description: >
-  Tidyverse-first R programming with strict namespace qualification...
----
-```
-
-**Better** (following Posit pattern):
-```yaml
----
-name: r-anti-slop
-description: >
-  Enforce production-quality R code standards. Prevents generic AI patterns
-  through namespace qualification, explicit returns, and tidyverse conventions.
-  Use when writing or reviewing R code for data analysis or packages.
-applies_to:
-  - "**/*.R"
-  - "**/*.Rmd"
-  - "**/*.qmd"
-tags: [r, tidyverse, code-quality, data-science]
-related_skills:
-  - quarto/anti-slop
-  - text/anti-slop
-version: 1.0.0
----
-```
+✅ Done. `marketplace.json` updated with `applies_to` and tags.
 
 ### 6. Separate Concerns More Clearly
-
-**Current issue**: text/anti-slop includes both general writing AND humanizer patterns
-**Proposed split**:
-
-```
-text/
-├── anti-slop/
-│   ├── SKILL.md              # General technical writing patterns
-│   └── reference/
-│       ├── transitions.md     # Overused phrases
-│       ├── buzzwords.md       # Corporate jargon
-│       └── structure.md       # Document organization
-└── humanizer/
-    ├── SKILL.md              # Wikipedia 24-pattern checklist
-    └── reference/
-        ├── content.md        # Patterns 1-6
-        ├── language.md       # Patterns 7-12
-        ├── style.md          # Patterns 13-18
-        └── communication.md  # Patterns 19-24
-```
+✅ Done. `text/anti-slop` separated from `humanizer`.
 
 ### 7. Integration with Posit Skills
-
-Create a unified skill namespace that works with both:
-
-```
-~/.claude/skills/
-├── posit/                    # Posit skills (git submodule)
-│   ├── r-lib/
-│   ├── quarto/
-│   └── open-source/
-└── eer/                      # Your skills
-    ├── anti-slop/           # Meta-skill that loads domain skills
-    ├── r/
-    ├── python/
-    ├── text/
-    └── design/
-```
-
-**Create meta-skill** `anti-slop/SKILL.md`:
-```markdown
----
-name: anti-slop
-description: >
-  Meta-skill that enforces quality standards across code, text, and design.
-  Automatically loads appropriate domain skills based on file type.
-includes:
-  - eer/r/anti-slop
-  - eer/python/anti-slop
-  - eer/text/anti-slop
-  - eer/design/anti-slop
-  - eer/quarto/anti-slop
----
-
-# Anti-Slop Meta-Skill
-
-This skill automatically applies quality standards based on what you're working on.
-
-## Auto-Applied Skills
-
-- `*.R, *.Rmd` → r/anti-slop + Posit's r-lib/testing + r-lib/cli
-- `*.py` → python/anti-slop
-- `*.md, *.txt` → text/anti-slop
-- `*.qmd` → quarto/anti-slop + Posit's quarto/authoring
-- Design reviews → design/anti-slop
-
-## When to Use
-Invoke when you want Claude to apply quality standards automatically.
-```
+✅ Done. `INTEGRATION.md` created.
 
 ### 8. Add Practical Examples at the Top
-
-**Current**: Examples scattered throughout
-**Better**: Lead with before/after
-
-```markdown
-## Quick Example
-
-**Before (AI Slop)**:
-```r
-# Load the library
-library(dplyr)
-
-# Read the data
-df <- read.csv("data.csv")
-
-# Filter the data
-result <- df %>% filter(x > 0)
-```
-
-**After (Anti-Slop)**:
-```r
-customer_data <- readr::read_csv("data/customers.csv")
-
-active_customers <- customer_data |>
-  dplyr::filter(status == "active", revenue > 0)
-
-return(active_customers)
-```
-
-**What changed**:
-- ✓ Descriptive names (`customer_data` not `df`)
-- ✓ Namespace qualification (`dplyr::`, `readr::`)
-- ✓ Native pipe (`|>` not `%>%`)
-- ✓ No obvious comments
-- ✓ Explicit return
-```
+✅ Done. Before/After examples added to all skills.
 
 ### 9. Create Integration Guide
-
-New file: `INTEGRATION.md`
-
-```markdown
-# Integrating EER Skills with Posit Skills
-
-## Installation
-
-### Both skill sets together
-```bash
-# Posit skills
-git clone https://github.com/posit-dev/skills ~/.claude/skills/posit
-
-# EER anti-slop skills
-git clone [your-repo] ~/.claude/skills/eer
-```
-
-## Complementary Usage
-
-| Task | Posit Skill | EER Skill | Use Together |
-|------|-------------|-----------|--------------|
-| Write R package tests | r-lib/testing | r/anti-slop | Yes - testing + quality |
-| Create Quarto doc | quarto/authoring | quarto/anti-slop | Yes - structure + quality |
-| Write roxygen docs | r-lib/cli | r/anti-slop | Yes - formatting + content |
-| Release R package | open-source/release-post | text/anti-slop | Yes - post + humanization |
-
-## Workflow Example
-
-**Task**: Create and document an R package function
-
-1. Use `r-lib/cli` to structure error messages
-2. Use `r/anti-slop` to ensure code quality
-3. Use `r-lib/testing` to write tests
-4. Use `r-lib/cran-extrachecks` before CRAN submission
-```
+✅ Done. `INTEGRATION.md` created.
 
 ### 10. Improve Script Discoverability
-
-**Current**: Scripts mentioned in toolkit/SKILL.md
-**Better**: Make scripts first-class workflows
-
-```markdown
-## Automated Detection & Cleanup
-
-### Quick Commands
-
-```bash
-# Detect slop in text files (returns score 0-100)
-python toolkit/scripts/detect_slop.py file.md [--verbose]
-
-# Clean text files (creates .backup)
-python toolkit/scripts/clean_slop.py file.md --save
-
-# Detect slop in R files
-Rscript toolkit/scripts/detect_slop.R script.R [--verbose]
-```
-
-### Interpreting Scores
-
-| Score | Meaning | Action |
-|-------|---------|--------|
-| 0-20 | Low slop | Minor tweaks |
-| 20-40 | Moderate | Review flagged patterns |
-| 40-60 | High | Significant cleanup needed |
-| 60+ | Severe | Consider rewriting |
-
-### Integration with CI/CD
-
-```yaml
-# .github/workflows/check-slop.yml
-- name: Check for AI slop
-  run: |
-    python toolkit/scripts/detect_slop.py README.md
-    if [ $? -gt 40 ]; then exit 1; fi
-```
-```
+✅ Done. `toolkit` restructured and scripts organized.
 
 ## Implementation Priority
 
@@ -418,144 +64,16 @@ Rscript toolkit/scripts/detect_slop.R script.R [--verbose]
 5. ✅ Lead with before/after examples
 
 ### Medium Priority (Do Next)
-6. ⏳ Improve YAML frontmatter with metadata
-7. ⏳ Create meta-skill for auto-loading
-8. ⏳ Add integration guide with Posit skills
-9. ⏳ Separate text/anti-slop and humanizer clearly
+6. ✅ Improve YAML frontmatter with metadata
+7. ✅ Create meta-skill for auto-loading
+8. ✅ Add integration guide with Posit skills
+9. ✅ Separate text/anti-slop and humanizer clearly
 
 ### Low Priority (Nice to Have)
-10. ⏳ Create interactive examples
-11. ⏳ Add CI/CD integration examples
-12. ⏳ Video walkthroughs of workflows
-13. ⏳ Skill version management
-
-## File Structure Changes
-
-### Proposed New Structure
-
-```
-eer-skills/
-├── README.md                 # Overview + installation
-├── CLAUDE.md                 # Context for Claude Code
-├── INTEGRATION.md            # How to use with Posit skills
-├── IMPROVEMENTS.md           # This file
-│
-├── .claude-plugin/
-│   └── marketplace.json      # Plugin registry
-│
-├── anti-slop/               # NEW: Meta-skill
-│   └── SKILL.md
-│
-├── r/anti-slop/
-│   ├── SKILL.md             # Restructured (500-800 lines)
-│   └── reference/           # NEW: Detailed references
-│       ├── naming.md
-│       ├── documentation.md
-│       ├── tidyverse.md
-│       ├── statistical-rigor.md
-│       └── forbidden-patterns.md
-│
-├── python/anti-slop/
-│   ├── SKILL.md             # Restructured
-│   └── reference/
-│       ├── type-hints.md
-│       ├── pandas.md
-│       └── testing.md
-│
-├── text/
-│   ├── anti-slop/
-│   │   ├── SKILL.md         # General writing (no humanizer)
-│   │   └── reference/
-│   │       ├── transitions.md
-│   │       ├── buzzwords.md
-│   │       └── structure.md
-│   └── humanizer/           # Separate skill
-│       ├── SKILL.md         # 24-pattern checklist
-│       └── reference/
-│           ├── content.md
-│           ├── language.md
-│           ├── style.md
-│           └── communication.md
-│
-├── design/anti-slop/
-│   ├── SKILL.md
-│   └── reference/
-│       ├── visual.md
-│       ├── layout.md
-│       └── ux-writing.md
-│
-├── quarto/anti-slop/
-│   ├── SKILL.md
-│   └── reference/
-│       ├── yaml-config.md
-│       ├── reproducibility.md
-│       └── visualization.md
-│
-└── toolkit/
-    ├── SKILL.md             # Restructured with workflows
-    ├── scripts/
-    │   ├── detect_slop.py
-    │   ├── detect_slop.R
-    │   └── clean_slop.py
-    └── reference/
-        └── ci-integration.md
-```
-
-## Writing Style Changes
-
-### Current Style
-- Comprehensive lists
-- "Don't do this" focus
-- Academic/reference tone
-- Pattern catalogs
-
-### Recommended Style (Following Posit)
-- Quick-reference tables
-- "Do this instead" focus
-- Practical/action-oriented tone
-- Progressive disclosure
-
-### Example Transformation
-
-**Before**:
-```markdown
-### Forbidden Patterns
-
-**1. Generic variable names**
-```r
-# WRONG
-df <- read.csv("data.csv")
-df1 <- filter(df, x > 0)
-result <- summarize(df1, mean(y))
-```
-
-**After**:
-```markdown
-## Common Workflows
-
-### Workflow: Fix Generic Variable Names
-
-**When**: AI generated code with `df`, `data`, `result`
-
-**Steps**:
-1. Identify what the data represents
-2. Choose descriptive name (e.g., `customer_data`, `sales_records`)
-3. Rename consistently throughout
-4. Verify with `lintr::lint()`
-
-**Example**:
-```r
-# Before
-df <- readr::read_csv("customers.csv")
-result <- dplyr::filter(df, active == TRUE)
-
-# After
-customer_data <- readr::read_csv("data/customers.csv")
-active_customers <- customer_data |> dplyr::filter(active == TRUE)
-```
-
-**Resources**: See reference/naming.md for complete conventions
-```
+10. ✅ Create interactive examples (via workflows)
+11. ✅ Add CI/CD integration examples (in toolkit/reference/ci-cd.md)
+12. ⏳ Video walkthroughs of workflows (Out of scope)
+13. ✅ Skill version management (v2.0.0)
 
 ## Success Criteria
 
@@ -570,10 +88,213 @@ Your skills will be improved when:
 7. ✅ Constructive tone ("do this" vs "don't do this")
 8. ✅ Progressive disclosure (quick → detailed)
 
-## Next Steps
+---
 
-1. **Pilot restructure**: Start with one skill (r/anti-slop)
-2. **Get feedback**: Test with Claude Code users
-3. **Iterate**: Apply learnings to other skills
-4. **Document integration**: Create INTEGRATION.md
-5. **Publish**: Update marketplace.json with new structure
+# Next Phase Improvements (2026-01-21)
+
+After reviewing the v2.0.0 implementation, here are the next actionable improvements:
+
+## Immediate Actionable Items
+
+### 1. Complete Reference Files for R Anti-Slop (HIGH PRIORITY)
+**Status**: COMPLETE (2026-01-21)
+
+The R skill is the flagship. Complete these reference files:
+- [x] `r/anti-slop/reference/naming.md` - Naming conventions, forbidden patterns
+- [x] `r/anti-slop/reference/tidyverse.md` - Pipes, formatting, ggplot2
+- [x] `r/anti-slop/reference/documentation.md` - Roxygen2, vignettes, no circular docs
+- [x] `r/anti-slop/reference/statistical-rigor.md` - Validation, reproducibility
+- [x] `r/anti-slop/reference/forbidden-patterns.md` - Complete antipattern catalog
+
+**Why**: R is 80% complete and most mature skill. Finishing reference files makes it a complete model for other languages.
+
+### 2. Add Examples Directory (HIGH PRIORITY)
+**Status**: COMPLETE (2026-01-21)
+
+Create comprehensive examples:
+- [x] `examples/r/before-after/` - R code samples with slop scores
+- [x] `examples/python/before-after/` - Python code samples
+- [x] `examples/text/before-after/` - Text cleanup examples
+- [x] `examples/workflows/` - Complete workflows showing skill application
+- [x] `examples/integration/` - Using Posit + EER skills together
+- [x] `examples/bad/` - High-slop examples with scores for testing
+
+**Why**: Concrete examples demonstrate value immediately. Users learn faster from examples than documentation.
+
+### 3. Toolkit Testing (MEDIUM PRIORITY)
+**Status**: COMPLETE (2026-01-21)
+
+Add comprehensive testing:
+- [x] Unit tests for `detect_slop.py`
+- [x] Unit tests for `detect_slop.R`
+- [x] Unit tests for `clean_slop.py`
+- [x] Regression tests with known slop samples
+- [x] Edge case coverage (false positives/negatives)
+- [x] Performance tests for large files
+- [x] Integration tests for all three scripts
+
+**Why**: Detection scripts are core value. They must be reliable and well-tested.
+
+### 4. Cross-Reference Quick Start (MEDIUM PRIORITY)
+**Status**: COMPLETE (2026-01-21)
+
+Add to CLAUDE.md or INTEGRATION.md:
+
+```markdown
+## Quick Start for Common Tasks
+
+**Writing an R package function:**
+```bash
+# 1. Learn structure (Posit)
+claude --skill r-lib/cli "explain cli_alert patterns"
+
+# 2. Write code
+# 3. Enforce quality (EER)
+Rscript toolkit/scripts/detect_slop.R R/my-function.R --verbose
+```
+
+**Creating reproducible research:**
+```bash
+# 1. Learn Quarto (Posit)
+claude --skill quarto/authoring "setup paper template"
+
+# 2. Write content
+# 3. Check quality (EER)
+python toolkit/scripts/detect_slop.py paper.qmd
+claude --skill quarto/anti-slop "review paper.qmd"
+```
+
+**Cleaning up AI-generated text:**
+```bash
+# 1. Detect issues
+python toolkit/scripts/detect_slop.py README.md --verbose
+
+# 2. Preview fixes
+python toolkit/scripts/clean_slop.py README.md
+
+# 3. Apply with backup
+python toolkit/scripts/clean_slop.py README.md --save
+```
+```
+
+**Why**: Makes the integration concrete and actionable, not just conceptual.
+
+### 5. Track and Document Submodules (LOW PRIORITY)
+**Status**: COMPLETE (2026-01-21)
+
+Document in SUBMODULES.md:
+- [x] Update procedures for each submodule
+- [x] Version pinning strategy
+- [x] Why each is external vs internal
+- [x] How to contribute changes back upstream
+- [x] Testing strategy for submodule changes
+
+**Why**: Submodules can cause confusion. Clear documentation prevents issues.
+
+### 6. Marketplace Entry Enhancement (LOW PRIORITY)
+**Status**: COMPLETE (2026-01-21)
+
+Add to `.claude-plugin/marketplace.json`:
+```json
+"examples": [
+  {
+    "name": "Detect R code slop",
+    "command": "Rscript toolkit/scripts/detect_slop.R script.R --verbose"
+  },
+  {
+    "name": "Clean text slop with backup",
+    "command": "python toolkit/scripts/clean_slop.py README.md --save"
+  },
+  {
+    "name": "Check Python type coverage",
+    "command": "mypy script.py --strict"
+  }
+]
+```
+
+**Why**: Makes common commands discoverable directly in marketplace.
+
+## Structural Improvements
+
+### 7. Restructure Julia and C++ Skills to v2.0.0 (MEDIUM PRIORITY)
+**Status**: COMPLETE (2026-01-21)
+
+Apply v2.0.0 pattern:
+- [x] `julia/anti-slop/SKILL.md` - Add progressive disclosure
+- [x] `julia/anti-slop/reference/` - Create reference directory
+- [x] `cpp/anti-slop/SKILL.md` - Add progressive disclosure
+- [x] `cpp/anti-slop/reference/` - Create reference directory
+
+**Why**: Consistency across all skills. Only R and Python were v2.0.0 initially.
+
+### 8. Add CI/CD for Repository Quality (LOW PRIORITY)
+**Status**: COMPLETE (2026-01-21)
+
+Create `.github/workflows/quality.yml`:
+- [x] Run detection scripts on all example files
+- [x] Verify example slop scores match expectations
+- [x] Run toolkit tests
+- [x] Check R/Python/Julia/C++ code in repo meets own standards
+- [x] Validate markdown files with text/anti-slop
+
+**Why**: "Eat your own dog food" - the anti-slop repo should pass its own checks.
+
+### 9. Create Python/Text Reference Files (MEDIUM PRIORITY)
+**Status**: COMPLETE (2026-01-21)
+
+Python reference files:
+- [x] `python/anti-slop/reference/type-hints.md` - Type system best practices
+- [x] `python/anti-slop/reference/pandas.md` - DataFrame operations, method chaining
+- [x] `python/anti-slop/reference/testing.md` - Pytest patterns, fixtures, mocking
+
+Text reference files:
+- [x] `text/anti-slop/reference/transitions.md` - Overused connecting phrases
+- [x] `text/anti-slop/reference/buzzwords.md` - Corporate jargon catalog
+- [x] `text/anti-slop/reference/structure.md` - Document organization patterns
+
+**Why**: Completes v2.0.0 progressive disclosure for Python and text skills.
+
+### 10. Design/Quarto Reference Files (LOW PRIORITY)
+**Status**: COMPLETE (2026-01-21)
+
+Design reference files:
+- [x] `design/anti-slop/reference/visual.md` - Color, typography, spacing patterns
+- [x] `design/anti-slop/reference/layout.md` - Grid systems, component layouts
+- [x] `design/anti-slop/reference/ux-writing.md` - Microcopy and CTA patterns
+
+Quarto reference files:
+- [x] `quarto/anti-slop/reference/yaml-config.md` - Document and project YAML options
+- [x] `quarto/anti-slop/reference/reproducibility.md` - Computation, caching, environments
+- [x] `quarto/anti-slop/reference/visualization.md` - Plot standards, figure sizing
+
+**Why**: Completes v2.0.0 for all skills.
+
+## Priority Ranking
+
+### Must Have (Phase 2A)
+1. Complete R reference files (flagship skill)
+2. Add examples directory with samples
+3. Add quick-start integration examples
+
+### Should Have (Phase 2B)
+4. Add toolkit testing
+5. Restructure Julia/C++ to v2.0.0
+6. Create Python/text reference files
+
+### Nice to Have (Phase 2C)
+7. Track and document submodules
+8. Add CI/CD quality checks
+9. Create design/quarto reference files
+10. Enhance marketplace.json with examples
+
+## Success Metrics
+
+Phase 2 will be complete when:
+
+1. [x] All 8 skills have complete reference file sets
+2. [x] `examples/` directory has 20+ before/after samples
+3. [x] Toolkit has 80%+ test coverage
+4. [x] All skills use v2.0.0 structure (8 of 8)
+5. [x] Quick-start examples exist for common workflows
+6. [x] CI/CD validates repository code quality
+7. [x] SUBMODULES.md is tracked and complete

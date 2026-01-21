@@ -47,6 +47,41 @@ This guide explains how EER (Emrah's Educational Resources) anti-slop skills int
 
 Both skill sets work independently and can be used together seamlessly.
 
+## Quick Start for Common Tasks
+
+**Writing an R package function:**
+```bash
+# 1. Learn structure (Posit)
+claude --skill r-lib/cli "explain cli_alert patterns"
+
+# 2. Write code
+# 3. Enforce quality (EER)
+Rscript toolkit/scripts/detect_slop.R R/my-function.R --verbose
+```
+
+**Creating reproducible research:**
+```bash
+# 1. Learn Quarto (Posit)
+claude --skill quarto/authoring "setup paper template"
+
+# 2. Write content
+# 3. Check quality (EER)
+python toolkit/scripts/detect_slop.py paper.qmd
+claude --skill quarto/anti-slop "review paper.qmd"
+```
+
+**Cleaning up AI-generated text:**
+```bash
+# 1. Detect issues
+python toolkit/scripts/detect_slop.py README.md --verbose
+
+# 2. Preview fixes
+python toolkit/scripts/clean_slop.py README.md
+
+# 3. Apply with backup
+python toolkit/scripts/clean_slop.py README.md --save
+```
+
 ## Complementary Use Patterns
 
 ### Pattern 1: Learning + Enforcement

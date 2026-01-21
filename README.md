@@ -211,10 +211,11 @@ See individual repositories for license information:
 ## Version History
 
 - **v2.0.0** (2026-01-21) - Complete restructure with workflow-focused patterns
-  - All main skills restructured (8/8)
-  - Progressive disclosure pattern implemented
+  - All main skills restructured (8/8 completed)
+  - Progressive disclosure pattern implemented (main SKILL.md + reference/)
   - Decision tables and realistic workflows added
-  - Integration guide created
+  - Integration guide created (INTEGRATION.md)
   - Submodules integrated (humanizer, cc-polymath, posit-skills)
+  - Automated detection scripts in toolkit/ updated
 
 - **v1.0.0** - Initial release with pattern catalogs

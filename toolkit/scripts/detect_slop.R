@@ -180,9 +180,12 @@ detect_obvious_comments <- function(lines, line_numbers) {
   for (i in seq_along(lines)) {
     line <- lines[i]
     line_num <- line_numbers[i]
+    
+    # Trim leading whitespace for regex matching
+    trimmed_line <- trimws(line, which = "left")
 
     for (pattern in OBVIOUS_COMMENT_PATTERNS) {
-      if (grepl(pattern, line, ignore.case = TRUE)) {
+      if (grepl(pattern, trimmed_line, ignore.case = TRUE)) {
         findings[[length(findings) + 1]] <- list(
           line = line_num,
           text = trimws(line),

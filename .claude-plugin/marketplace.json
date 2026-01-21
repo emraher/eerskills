@@ -6,7 +6,21 @@
   },
   "metadata": {
     "description": "Quality enforcement layer for code, text, and design. Detects and prevents generic AI-generated patterns. Works complementary with any learning resource (books, courses, Posit skills). Includes active detection scripts.",
-    "version": "2.0.0"
+    "version": "2.0.0",
+    "examples": [
+      {
+        "name": "Detect R code slop",
+        "command": "Rscript toolkit/scripts/detect_slop.R script.R --verbose"
+      },
+      {
+        "name": "Clean text slop with backup",
+        "command": "python toolkit/scripts/clean_slop.py README.md --save"
+      },
+      {
+        "name": "Check Python type coverage",
+        "command": "mypy script.py --strict"
+      }
+    ]
   },
   "plugins": [
     {
@@ -16,6 +30,14 @@
       "strict": false,
       "version": "2.0.0",
       "tags": ["meta-skill", "quality-enforcement", "coordinator"],
+      "applies_to": [
+        "**/*.R",
+        "**/*.py",
+        "**/*.md",
+        "**/*.jl",
+        "**/*.cpp",
+        "**/*.qmd"
+      ],
       "skills": [
         "./anti-slop"
       ]
@@ -27,6 +49,12 @@
       "strict": false,
       "version": "2.0.0",
       "tags": ["automation", "quality-assurance", "ci-cd", "linting"],
+      "applies_to": [
+        "**/*.py",
+        "**/*.R",
+        "**/*.md",
+        "**/*.txt"
+      ],
       "skills": [
         "./toolkit"
       ]
@@ -38,6 +66,11 @@
       "strict": false,
       "version": "2.0.0",
       "tags": ["technical-writing", "documentation", "content-quality"],
+      "applies_to": [
+        "**/*.md",
+        "**/*.txt",
+        "**/*.rst"
+      ],
       "skills": [
         "./text/anti-slop"
       ]
@@ -49,8 +82,13 @@
       "strict": false,
       "version": "2.0.0",
       "tags": ["writing", "voice", "style", "humanization"],
+      "applies_to": [
+        "**/*.md",
+        "**/*.txt",
+        "README.md"
+      ],
       "skills": [
-        "./humanizer"
+        "./external/humanizer"
       ]
     },
     {
@@ -60,6 +98,12 @@
       "strict": false,
       "version": "2.0.0",
       "tags": ["design", "ui", "visual-quality", "branding"],
+      "applies_to": [
+        "**/*.figma",
+        "**/*.sketch",
+        "design-review",
+        "ui-audit"
+      ],
       "skills": [
         "./design/anti-slop"
       ]
@@ -71,6 +115,11 @@
       "strict": false,
       "version": "2.0.0",
       "tags": ["r", "tidyverse", "code-quality", "data-science"],
+      "applies_to": [
+        "**/*.R",
+        "**/*.Rmd",
+        "R/"
+      ],
       "skills": [
         "./r/anti-slop"
       ]
@@ -82,6 +131,10 @@
       "strict": false,
       "version": "2.0.0",
       "tags": ["python", "type-hints", "code-quality", "data-science"],
+      "applies_to": [
+        "**/*.py",
+        "**/*.ipynb"
+      ],
       "skills": [
         "./python/anti-slop"
       ]
@@ -93,24 +146,42 @@
       "strict": false,
       "version": "2.0.0",
       "tags": ["quarto", "rmarkdown", "reproducibility", "research"],
+      "applies_to": [
+        "**/*.qmd",
+        "**/*.Rmd",
+        "**/*.ipynb"
+      ],
       "skills": [
         "./quarto/anti-slop"
       ]
     },
     {
       "name": "julia",
-      "description": "Julia code quality enforcement for scientific computing",
+      "description": "Julia code quality enforcement for scientific computing. Type stability and multiple dispatch.",
       "source": "./",
       "strict": false,
+      "version": "2.0.0",
+      "tags": ["julia", "scientific-computing", "type-stability"],
+      "applies_to": [
+        "**/*.jl"
+      ],
       "skills": [
         "./julia/anti-slop"
       ]
     },
     {
       "name": "cpp",
-      "description": "C++ and Rcpp quality enforcement for performance-critical code",
+      "description": "C++ and Rcpp quality enforcement for performance-critical code. Memory safety and Rcpp best practices.",
       "source": "./",
       "strict": false,
+      "version": "2.0.0",
+      "tags": ["cpp", "rcpp", "performance", "memory-safety"],
+      "applies_to": [
+        "**/*.cpp",
+        "**/*.h",
+        "**/*.hpp",
+        "src/"
+      ],
       "skills": [
         "./cpp/anti-slop"
       ]
