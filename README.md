@@ -203,10 +203,10 @@ rm -rf .git/modules/<path>
 ## License
 
 See individual repositories for license information:
-- Anti-slop skills: [LICENSE](./License)
-- Humanizer: See [external/humanizer/LICENSE](https://github.com/blader/humanizer/tree/3b117912054aab527533523a173999df0bce862f?tab=readme-ov-file#license)
-- CC-Polymath: See [external/cc-polymath/LICENSE](https://raw.githubusercontent.com/rand/cc-polymath/2d9a986a14237b1f38c11b2767bca832e5c2c7ba/LICENSE)
-- Posit Skills: See [external/posit-skills/LICENSE](https://raw.githubusercontent.com/posit-dev/skills/5869b9b55459b018fa5f2bdc4e1291536623beb3/LICENSE)
+- Anti-slop skills: [LICENSE](./LICENSE)
+- Humanizer: See [external/humanizer/README.md](external/humanizer/)
+- CC-Polymath: See [external/cc-polymath/LICENSE](external/cc-polymath/LICENSE)
+- Posit Skills: See [external/posit-skills/LICENSE](external/posit-skills/LICENSE)
 
 ## Version History
 
