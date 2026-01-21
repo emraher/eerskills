@@ -51,7 +51,7 @@ All skills now follow a consistent progressive disclosure pattern:
 
 **Content quality:**
 - `text/anti-slop/` - Technical writing (remove transitions, buzzwords, filler) (✅ v2.0.0)
-- `humanizer/` - Wikipedia 24-pattern checklist (add personality, remove AI signatures) (✅ v2.0.0)
+- `external/humanizer/` - Wikipedia 24-pattern checklist (add personality, remove AI signatures) (✅ v2.0.0, submodule)
 - `quarto/anti-slop/` - Reproducible research documents (no template-derived content) (✅ v2.0.0)
 
 **Design quality:**
@@ -264,9 +264,6 @@ eer-skills/
 │   ├── SKILL.md
 │   └── reference/
 │
-├── humanizer/             # Voice/personality
-│   └── SKILL.md
-│
 ├── design/anti-slop/      # Visual quality
 │   ├── SKILL.md
 │   └── reference/
@@ -278,9 +275,15 @@ eer-skills/
 ├── julia/anti-slop/       # Julia code
 ├── cpp/anti-slop/         # C++/Rcpp
 │
+├── external/              # External submodules
+│   ├── humanizer/        # [SUBMODULE] Voice/personality
+│   ├── cc-polymath/      # [SUBMODULE] Additional anti-slop patterns
+│   └── posit-skills/     # [SUBMODULE] Posit's official skills
+│
 ├── INTEGRATION.md         # How to use with Posit skills
 ├── IMPROVEMENTS.md        # Implementation plan
-└── PROGRESS_SUMMARY.md   # Current status
+├── PROGRESS_SUMMARY.md   # Current status
+└── SUBMODULES.md         # Submodule management guide
 ```
 
 ## Unique Value Propositions

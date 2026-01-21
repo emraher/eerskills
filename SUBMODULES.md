@@ -6,7 +6,7 @@ This repository uses git submodules to integrate external skill collections. Thi
 
 | Submodule | Path | Repository | Purpose |
 |-----------|------|------------|---------|
-| humanizer | `humanizer/` | [blader/humanizer](https://github.com/blader/humanizer) | Wikipedia's 24-pattern AI writing checklist |
+| humanizer | `external/humanizer/` | [blader/humanizer](https://github.com/blader/humanizer) | Wikipedia's 24-pattern AI writing checklist |
 | cc-polymath | `external/cc-polymath/` | [rand/cc-polymath](https://github.com/rand/cc-polymath) | Additional anti-slop patterns |
 | posit-skills | `external/posit-skills/` | [posit-dev/skills](https://github.com/posit-dev/skills) | Posit's official R/Quarto skills |
 
@@ -24,9 +24,9 @@ git submodule update --remote --merge
 
 ```bash
 # Update just humanizer
-cd humanizer
+cd external/humanizer
 git pull origin main
-cd ..
+cd ../..
 
 # Update just cc-polymath
 cd external/cc-polymath
@@ -76,7 +76,7 @@ git submodule update --remote --merge
 
 # 3. Commit the submodule updates (if any)
 git status
-git add .gitmodules humanizer external/cc-polymath external/posit-skills
+git add .gitmodules external/humanizer external/cc-polymath external/posit-skills
 git commit -m "Update submodules to latest versions"
 ```
 
@@ -99,7 +99,7 @@ If you want to contribute to a submodule:
 
 ```bash
 # 1. Navigate to the submodule
-cd humanizer
+cd external/humanizer
 
 # 2. Create a branch
 git checkout -b my-feature
@@ -120,7 +120,7 @@ If you have a fork of a submodule:
 
 ```bash
 # Navigate to submodule
-cd humanizer
+cd external/humanizer
 
 # Add your fork as a remote
 git remote add fork https://github.com/yourusername/humanizer.git
@@ -130,8 +130,8 @@ git fetch fork
 git checkout -b my-changes fork/my-branch
 
 # Return to main repo and commit the change
-cd ..
-git add humanizer
+cd ../..
+git add external/humanizer
 git commit -m "Use fork of humanizer with custom changes"
 ```
 
@@ -180,11 +180,11 @@ git submodule update --init --recursive
 ### Submodule has uncommitted changes
 
 ```bash
-cd humanizer
+cd external/humanizer
 git status
 # Either commit the changes or reset
 git reset --hard HEAD
-cd ..
+cd ../..
 ```
 
 ### Submodule is detached HEAD
@@ -193,24 +193,24 @@ This is normal! Submodules track specific commits, not branches.
 
 To update to the latest:
 ```bash
-cd humanizer
+cd external/humanizer
 git checkout main
 git pull
-cd ..
-git add humanizer
+cd ../..
+git add external/humanizer
 git commit -m "Update humanizer to latest main"
 ```
 
 ### Conflicts when updating submodules
 
 ```bash
-cd humanizer
+cd external/humanizer
 git status
 # Resolve conflicts manually
 git add .
 git commit -m "Resolve conflicts"
-cd ..
-git add humanizer
+cd ../..
+git add external/humanizer
 git commit -m "Update humanizer after resolving conflicts"
 ```
 
@@ -235,7 +235,7 @@ git commit -m "Update humanizer after resolving conflicts"
 
 5. **Commit Submodule Updates**: Don't forget to commit when submodules change
    ```bash
-   git add humanizer external/
+   git add external/
    git commit -m "Update submodules"
    ```
 

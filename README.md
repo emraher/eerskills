@@ -34,7 +34,10 @@ These skills work alongside ANY learning resource, including Posit skills.
 3. **Verify installation**:
    ```bash
    ls -la
-   # Should see: anti-slop/, r/, python/, text/, design/, quarto/, toolkit/, humanizer/, external/
+   # Should see: anti-slop/, r/, python/, text/, design/, quarto/, toolkit/, external/
+
+   ls -la external/
+   # Should see: humanizer/, cc-polymath/, posit-skills/
    ```
 
 ### Update All Skills
@@ -60,8 +63,8 @@ eer-skills/
 ├── design/anti-slop/      # Visual quality
 ├── quarto/anti-slop/      # Reproducible research
 ├── toolkit/               # Automated detection scripts
-├── humanizer/             # [SUBMODULE] Voice & personality
-├── external/
+├── external/              # External skill repositories (submodules)
+│   ├── humanizer/         # [SUBMODULE] Voice & personality
 │   ├── cc-polymath/       # [SUBMODULE] Additional anti-slop patterns
 │   └── posit-skills/      # [SUBMODULE] Posit's official skills
 ├── INTEGRATION.md         # How to use with other skills
@@ -69,11 +72,11 @@ eer-skills/
 └── README.md              # This file
 ```
 
-### Submodules
+### Submodules (in external/)
 
-This repository includes three external repositories as git submodules:
+This repository includes three external repositories as git submodules in the `external/` directory:
 
-1. **humanizer/** - [blader/humanizer](https://github.com/blader/humanizer)
+1. **external/humanizer/** - [blader/humanizer](https://github.com/blader/humanizer)
    - Wikipedia's 24-pattern checklist for removing AI writing signatures
    - Adds personality and voice to text
 
@@ -95,7 +98,7 @@ This repository includes three external repositories as git submodules:
 
 ### Content Quality
 - **text/anti-slop** - Technical writing (remove transitions, buzzwords, filler)
-- **humanizer** - Wikipedia 24-pattern checklist (add personality, remove AI signatures)
+- **external/humanizer** - Wikipedia 24-pattern checklist (add personality, remove AI signatures)
 - **quarto/anti-slop** - Reproducible research documents
 
 ### Design Quality
@@ -152,7 +155,7 @@ The skills are **complementary equals**, not dependent/subordinate.
 
 ```bash
 # Update just humanizer
-cd humanizer && git pull origin main && cd ..
+cd external/humanizer && git pull origin main && cd ../..
 
 # Update just Posit skills
 cd external/posit-skills && git pull origin main && cd ../..
