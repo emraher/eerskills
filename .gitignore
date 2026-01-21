@@ -1,6 +1,7 @@
 # Temporary files
 *.backup
 .DS_Store
+.gemini-clipboard/
 
 # Task output files
 /private/tmp/
