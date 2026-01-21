@@ -44,4 +44,4 @@ jobs:
         # Check some key files for slop
         python3 toolkit/scripts/detect_slop.py README.md
         python3 toolkit/scripts/detect_slop.py CLAUDE.md
-        python3 toolkit/scripts/detect_slop.py INTEGRATION.md
+        python3 toolkit/scripts/detect_slop.py docs/INTEGRATION.md
