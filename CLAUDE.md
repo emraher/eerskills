@@ -250,11 +250,6 @@ anti-slop-skills/
 ├── r/anti-slop/           # R quality enforcement
 │   ├── SKILL.md
 │   └── reference/
-│       ├── naming.md
-│       ├── tidyverse.md
-│       ├── documentation.md
-│       ├── statistical-rigor.md
-│       └── forbidden-patterns.md
 │
 ├── python/anti-slop/      # Python quality enforcement
 │   ├── SKILL.md
@@ -280,10 +275,11 @@ anti-slop-skills/
 │   ├── cc-polymath/      # [SUBMODULE] Additional anti-slop patterns
 │   └── posit-skills/     # [SUBMODULE] Posit's official skills
 │
-├── INTEGRATION.md         # How to use with Posit skills
-├── IMPROVEMENTS.md        # Implementation plan
-├── PROGRESS_SUMMARY.md   # Current status
-└── SUBMODULES.md         # Submodule management guide
+├── docs/                  # Documentation
+│   ├── INTEGRATION.md    # How to use with Posit skills
+│   └── SUBMODULES.md     # Submodule management guide
+│
+└── CLAUDE.md              # Context for Claude Code
 ```
 
 ## Unique Value Propositions
@@ -330,7 +326,7 @@ When implementing improvements:
 
 **Phase 2: Integration (Mostly Complete)**
 - ✅ CLAUDE.md updated
-- ✅ INTEGRATION.md created
+- ✅ docs/INTEGRATION.md created
 - 📋 Testing with Claude Code pending
 
 **Phase 3: Refinement (Pending)**

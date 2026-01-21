@@ -63,11 +63,11 @@ anti-slop-skills/
 ├── design/anti-slop/      # Visual quality
 ├── quarto/anti-slop/      # Reproducible research
 ├── toolkit/               # Automated detection scripts
+├── docs/                  # Documentation and guides
 ├── external/              # External skill repositories (submodules)
 │   ├── humanizer/         # [SUBMODULE] Voice & personality
 │   ├── cc-polymath/       # [SUBMODULE] Additional anti-slop patterns
 │   └── posit-skills/      # [SUBMODULE] Posit's official skills
-├── INTEGRATION.md         # How to use with other skills
 ├── CLAUDE.md              # Context for Claude Code
 └── README.md              # This file
 ```
@@ -136,7 +136,7 @@ python toolkit/scripts/clean_slop.py <file.md> --save
 
 ## Integration with Other Skills
 
-See [INTEGRATION.md](INTEGRATION.md) for detailed guidance on using Anti-Slop skills alongside Posit skills and other learning resources.
+See [docs/INTEGRATION.md](docs/INTEGRATION.md) for detailed guidance on using Anti-Slop skills alongside Posit skills and other learning resources.
 
 ### Quick Example
 
@@ -150,6 +150,8 @@ See [INTEGRATION.md](INTEGRATION.md) for detailed guidance on using Anti-Slop sk
 The skills are **complementary equals**, not dependent/subordinate.
 
 ## Working with Submodules
+
+For full details, see [docs/SUBMODULES.md](docs/SUBMODULES.md).
 
 ### Update a specific submodule
 
@@ -184,8 +186,8 @@ rm -rf .git/modules/<path>
 
 ### To Anti-Slop Skills (this repo)
 - Main skills in root directories (r/, python/, text/, etc.)
-- Follow v2.0.0 pattern (see IMPROVEMENTS.md)
-- Progressive disclosure (main SKILL.md + reference/ files)
+- Follow v2.0.0 pattern (progressive disclosure)
+- Main SKILL.md + reference/ files
 
 ### To Submodules
 - Submit issues/PRs to their respective repositories:
@@ -195,10 +197,9 @@ rm -rf .git/modules/<path>
 
 ## Documentation
 
-- **INTEGRATION.md** - Using Anti-Slop + Posit skills together
+- **[docs/INTEGRATION.md](docs/INTEGRATION.md)** - Using Anti-Slop + Posit skills together
+- **[docs/SUBMODULES.md](docs/SUBMODULES.md)** - Submodule management guide
 - **CLAUDE.md** - Context for Claude Code
-- **PROGRESS_SUMMARY.md** - Implementation status
-- **IMPROVEMENTS.md** - Design decisions and rationale
 
 ## License
 
