@@ -60,7 +60,7 @@ All restructured skills now follow the improved pattern:
 - Auto-loads domain skills based on file type
 
 #### ✅ INTEGRATION.md
-- Comprehensive guide on how EER + Posit work together
+- Comprehensive guide on how Anti-Slop + Posit work together
 
 #### ✅ marketplace.json
 - Updated to v2.0.0 schema
@@ -91,7 +91,7 @@ Need to complete detailed reference files for:
 
 ## Core Philosophy Clarified
 
-### Your Skills' Unique Value
+### Anti-Slop Skills' Unique Value
 
 **Anti-Slop Skills = Quality Enforcement Layer**
 
@@ -114,7 +114,7 @@ They teach structure:
 
 ```
 User journey:
-1. Learn how (Posit) → 2. Enforce quality (Your skills)
+1. Learn how (Posit) → 2. Enforce quality (Anti-Slop skills)
 
 Example:
 - posit/r-lib/cli → Learn cli package structure
@@ -142,4 +142,4 @@ Example:
 
 ## Key Insight
 
-**Your skills are NOT Posit addons - they're a quality enforcement layer that works alongside ANY learning resource.**
+**These skills are NOT Posit addons - they're a quality enforcement layer that works alongside ANY learning resource.**

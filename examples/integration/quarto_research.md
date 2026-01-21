@@ -1,6 +1,6 @@
 # Integration Example: Creating a Reproducible Research Paper
 
-This example demonstrates how to use Posit's Quarto skills alongside EER's Anti-Slop skills.
+This example demonstrates how to use Posit's Quarto skills alongside Anti-Slop skills.
 
 ## Step 1: Initialize Project (Posit)
 Use `posit/quarto/authoring` to set up the document structure and YAML.
@@ -8,7 +8,7 @@ Use `posit/quarto/authoring` to set up the document structure and YAML.
 ## Step 2: Implement Analysis (Posit)
 Use `posit/r-lib/cli` for error handling and `posit/r-lib/testing` for data validation.
 
-## Step 3: Enforce Quality (EER)
+## Step 3: Enforce Quality (Anti-Slop)
 Use `r/anti-slop` and `quarto/anti-slop` to clean the implementation.
 
 ### Before Cleanup (AI Slop)
@@ -34,7 +34,7 @@ ggplot2::ggplot(
   ggplot2::theme_minimal()
 ```
 
-## Step 4: Final Review (EER)
+## Step 4: Final Review (Anti-Slop)
 Run detection scripts:
 ```bash
 python toolkit/scripts/detect_slop.py paper.qmd

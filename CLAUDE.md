@@ -4,14 +4,14 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Repository Overview
 
-**EER Anti-Slop Skills** - A quality enforcement layer that detects and prevents generic AI-generated patterns across code, text, and design.
+**Anti-Slop Skills** - A quality enforcement layer that detects and prevents generic AI-generated patterns across code, text, and design.
 
 ### What Makes This Different
 
 This is NOT a how-to guide. This is a **pattern detection and quality enforcement system**.
 
 - **Posit skills** teach you how to use packages and structure projects
-- **EER anti-slop skills** detect and prevent generic AI garbage
+- **Anti-slop skills** detect and prevent generic AI garbage
 - **Together** they provide complete coverage: learning + quality
 
 These skills work alongside ANY learning resource: books, courses, documentation, or Posit skills.
@@ -213,9 +213,9 @@ Detection scripts output scores (0-100, higher is worse):
 
 ### Complementary with Posit Skills
 
-EER skills are a **quality enforcement layer** that works alongside Posit's how-to skills:
+These skills are a **quality enforcement layer** that works alongside Posit's how-to skills:
 
-| Task | Posit Skill | EER Skill | Use Together |
+| Task | Posit Skill | Anti-Slop Skill | Use Together |
 |------|-------------|-----------|--------------|
 | Write R package functions | r-lib/cli | r/anti-slop | Structure + quality |
 | Create Quarto docs | quarto/authoring | quarto/anti-slop | How-to + slop detection |
@@ -226,17 +226,17 @@ EER skills are a **quality enforcement layer** that works alongside Posit's how-
 
 **Creating an R package function:**
 1. Use Posit's `r-lib/cli` to learn cli package structure
-2. Use EER's `r/anti-slop` to ensure code isn't generic
+2. Use `r/anti-slop` to ensure code isn't generic
 3. Run `Rscript toolkit/scripts/detect_slop.R` before committing
 4. Use Posit's `r-lib/testing` for test structure
-5. Use EER's `r/anti-slop` to avoid generic test patterns
+5. Use `r/anti-slop` to avoid generic test patterns
 
 The skills are **complementary equals**, not dependent/subordinate.
 
 ## File Organization
 
 ```
-eer-skills/
+anti-slop-skills/
 ├── anti-slop/              # Meta-skill coordinator
 │   └── SKILL.md
 │

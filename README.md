@@ -1,4 +1,4 @@
-# EER Anti-Slop Skills
+# Anti-Slop Skills
 
 A quality enforcement layer that detects and prevents generic AI-generated patterns across code, text, and design.
 
@@ -11,7 +11,7 @@ A quality enforcement layer that detects and prevents generic AI-generated patte
 This is NOT a how-to guide. This is a **pattern detection and quality enforcement system**.
 
 - **Learning resources** (books, courses, Posit skills) teach you how to use tools and structure projects
-- **EER anti-slop skills** detect and prevent generic AI garbage
+- **Anti-slop skills** detect and prevent generic AI garbage
 - **Together** they provide complete coverage: learning + quality
 
 These skills work alongside ANY learning resource, including Posit skills.
@@ -22,8 +22,8 @@ These skills work alongside ANY learning resource, including Posit skills.
 
 1. **Clone this repository**:
    ```bash
-   git clone https://github.com/emraher/eer-skills.git ~/.claude/skills/eer-skills
-   cd ~/.claude/skills/eer-skills
+   git clone https://github.com/your-username/anti-slop-skills.git ~/.claude/skills/anti-slop-skills
+   cd ~/.claude/skills/anti-slop-skills
    ```
 
 2. **Initialize submodules** (external skill collections):
@@ -42,7 +42,7 @@ These skills work alongside ANY learning resource, including Posit skills.
 
 ### Update All Skills
 
-To pull the latest updates from all repositories (your EER skills + submodules):
+To pull the latest updates from all repositories (your skills + submodules):
 
 ```bash
 # Update main repository
@@ -55,7 +55,7 @@ git submodule update --remote --merge
 ## Repository Structure
 
 ```
-eer-skills/
+anti-slop-skills/
 ├── anti-slop/              # Meta-skill coordinator
 ├── r/anti-slop/           # R code quality
 ├── python/anti-slop/      # Python code quality
@@ -136,16 +136,16 @@ python toolkit/scripts/clean_slop.py <file.md> --save
 
 ## Integration with Other Skills
 
-See [INTEGRATION.md](INTEGRATION.md) for detailed guidance on using EER skills alongside Posit skills and other learning resources.
+See [INTEGRATION.md](INTEGRATION.md) for detailed guidance on using Anti-Slop skills alongside Posit skills and other learning resources.
 
 ### Quick Example
 
 **Creating an R package function:**
 1. Use Posit's `r-lib/cli` to learn cli package structure
-2. Use EER's `r/anti-slop` to ensure code isn't generic
+2. Use `r/anti-slop` to ensure code isn't generic
 3. Run `Rscript toolkit/scripts/detect_slop.R` before committing
 4. Use Posit's `r-lib/testing` for test structure
-5. Use EER's `r/anti-slop` to avoid generic test patterns
+5. Use `r/anti-slop` to avoid generic test patterns
 
 The skills are **complementary equals**, not dependent/subordinate.
 
@@ -182,7 +182,7 @@ rm -rf .git/modules/<path>
 
 ## Contributing
 
-### To EER Skills (this repo)
+### To Anti-Slop Skills (this repo)
 - Main skills in root directories (r/, python/, text/, etc.)
 - Follow v2.0.0 pattern (see IMPROVEMENTS.md)
 - Progressive disclosure (main SKILL.md + reference/ files)
@@ -195,7 +195,7 @@ rm -rf .git/modules/<path>
 
 ## Documentation
 
-- **INTEGRATION.md** - Using EER + Posit skills together
+- **INTEGRATION.md** - Using Anti-Slop + Posit skills together
 - **CLAUDE.md** - Context for Claude Code
 - **PROGRESS_SUMMARY.md** - Implementation status
 - **IMPROVEMENTS.md** - Design decisions and rationale
@@ -203,8 +203,8 @@ rm -rf .git/modules/<path>
 ## License
 
 See individual repositories for license information:
-- EER skills: [Your license]
-- Humanizer: See [humanizer/LICENSE](humanizer/)
+- Anti-slop skills: [Your license]
+- Humanizer: See [external/humanizer/LICENSE](external/humanizer/)
 - CC-Polymath: See [external/cc-polymath/LICENSE](external/cc-polymath/)
 - Posit Skills: See [external/posit-skills/LICENSE](external/posit-skills/)
 

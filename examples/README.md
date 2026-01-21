@@ -36,5 +36,5 @@ Currently, the toolkit focuses on text and R code detection. For Python, compare
 - **python/before-after/**: Python data processing scripts (slop vs clean)
 - **text/before-after/**: Technical documentation examples (slop vs clean)
 - **workflows/**: Complete workflows showing skill application
-- **integration/**: Using Posit + EER skills together
+- **integration/**: Using Posit + Anti-Slop skills together
 - **bad/**: High-slop examples for testing

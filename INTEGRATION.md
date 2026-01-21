@@ -1,8 +1,8 @@
-# Integration Guide: EER Skills & Posit Skills
+# Integration Guide: Anti-Slop Skills & Posit Skills
 
 ## Overview
 
-This guide explains how EER (Emrah's Educational Resources) anti-slop skills integrate with Posit skills and other learning resources. These skill sets are **complementary equals**, not hierarchical.
+This guide explains how Anti-Slop skills integrate with Posit skills and other learning resources. These skill sets are **complementary equals**, not hierarchical.
 
 ## Key Distinction
 
@@ -12,7 +12,7 @@ This guide explains how EER (Emrah's Educational Resources) anti-slop skills int
 - Document best practices and conventions
 - Examples: quarto/authoring, r-lib/cli, r-lib/testing
 
-### EER Anti-Slop Skills: Quality Enforcement
+### Anti-Slop Skills: Quality Enforcement
 - Prevent generic AI-generated patterns
 - Enforce production-quality standards
 - Catch common mistakes and antipatterns
@@ -30,13 +30,13 @@ This guide explains how EER (Emrah's Educational Resources) anti-slop skills int
    # Typically: clone repo and configure skill manager
    ```
 
-2. **Install EER Anti-Slop Skills**:
+2. **Install Anti-Slop Skills**:
    ```bash
-   # Clone EER skills repository
-   git clone https://github.com/emraher/eer-skills.git
+   # Clone Anti-Slop skills repository
+   git clone https://github.com/your-username/anti-slop-skills.git
 
    # Configure in your skill manager
-   # Add path to eer-skills directory
+   # Add path to anti-slop-skills directory
    ```
 
 3. **Verify Installation**:
@@ -55,7 +55,7 @@ Both skill sets work independently and can be used together seamlessly.
 claude --skill r-lib/cli "explain cli_alert patterns"
 
 # 2. Write code
-# 3. Enforce quality (EER)
+# 3. Enforce quality (Anti-Slop)
 Rscript toolkit/scripts/detect_slop.R R/my-function.R --verbose
 ```
 
@@ -65,7 +65,7 @@ Rscript toolkit/scripts/detect_slop.R R/my-function.R --verbose
 claude --skill quarto/authoring "setup paper template"
 
 # 2. Write content
-# 3. Check quality (EER)
+# 3. Check quality (Anti-Slop)
 python toolkit/scripts/detect_slop.py paper.qmd
 claude --skill quarto/anti-slop "review paper.qmd"
 ```
@@ -201,7 +201,7 @@ test_that("calculate_rate() handles zero denominator", {
 
 ## Comprehensive Integration Table
 
-| Task | Posit Skill | EER Anti-Slop | Why Both? |
+| Task | Posit Skill | Anti-Slop | Why Both? |
 |------|-------------|---------------|-----------|
 | **Write Quarto doc** | quarto/authoring (syntax) | quarto/anti-slop (quality) | Learn features + enforce standards |
 | **Create R package** | r-lib/testing (patterns) | r/anti-slop (code quality) | Learn structure + prevent slop |
@@ -227,7 +227,7 @@ test_that("calculate_rate() handles zero denominator", {
    # Use posit/r-lib/lifecycle for deprecations
    ```
 
-2. **Quality** (EER anti-slop):
+2. **Quality** (Anti-Slop):
    ```r
    # Run r/anti-slop on all R code
    # Check namespace qualification
@@ -295,7 +295,7 @@ test_that("calculate_rate() handles zero denominator", {
    - Error handling (language guides)
    - Testing patterns (pytest docs)
 
-2. **Enforce quality** (EER anti-slop):
+2. **Enforce quality** (Anti-Slop):
    - python/anti-slop for type hints
    - r/anti-slop for R components
    - text/anti-slop for documentation
@@ -342,7 +342,7 @@ test_that("calculate_rate() handles zero denominator", {
 - ✓ Migrating between tools
 - ✓ Implementing specific patterns
 
-### Use EER Anti-Slop When:
+### Use Anti-Slop When:
 - ✓ Reviewing code for generic patterns
 - ✓ Enforcing production quality standards
 - ✓ Preparing for public release
@@ -362,7 +362,7 @@ test_that("calculate_rate() handles zero denominator", {
 
 **A**: Depends on your goals:
 - **Learning**: Posit skills sufficient for syntax/features
-- **Production**: EER anti-slop ensures quality
+- **Production**: Anti-slop ensures quality
 - **Best practice**: Use both for complete coverage
 
 ### Q: Which should I use first?
@@ -529,7 +529,7 @@ my_function <- function(customer_data) { }
 skill list --verbose
 
 # Verify installation
-ls -la /path/to/eer-skills
+ls -la /path/to/anti-slop-skills
 ls -la /path/to/posit-skills
 
 # Check skill configuration
@@ -586,7 +586,7 @@ Configure your IDE to suggest both skills:
   "skills.suggestOnType": true,
   "skills.providers": [
     "posit",
-    "eer-anti-slop"
+    "anti-slop"
   ]
 }
 ```
@@ -595,15 +595,15 @@ Configure your IDE to suggest both skills:
 ```r
 # .Rprofile
 options(
-  skill.providers = c("posit", "eer-anti-slop"),
+  skill.providers = c("posit", "anti-slop"),
   skill.auto_suggest = TRUE
 )
 ```
 
 ## Resources
 
-### EER Anti-Slop Skills
-- **Main repository**: https://github.com/emraher/eer-skills
+### Anti-Slop Skills
+- **Main repository**: https://github.com/your-username/anti-slop-skills
 - **Documentation**: See individual SKILL.md files
 - **Issues/contributions**: GitHub issues
 
@@ -622,7 +622,7 @@ options(
 
 Both skill sets are valuable and complementary:
 
-| Aspect | Posit Skills | EER Anti-Slop |
+| Aspect | Posit Skills | Anti-Slop |
 |--------|--------------|---------------|
 | **Purpose** | Teach syntax & features | Enforce quality standards |
 | **When** | Learning new concepts | Reviewing/refactoring |

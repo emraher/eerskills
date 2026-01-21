@@ -1,8 +1,8 @@
 {
-  "name": "eer-skills",
+  "name": "anti-slop-skills",
   "owner": {
-    "name": "Emrah Er",
-    "email": "eer@eremrah.com"
+    "name": "Anti-Slop Team",
+    "email": "contact@anti-slop.org"
   },
   "metadata": {
     "description": "Quality enforcement layer for code, text, and design. Detects and prevents generic AI-generated patterns. Works complementary with any learning resource (books, courses, Posit skills). Includes active detection scripts.",

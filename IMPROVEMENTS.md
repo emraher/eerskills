@@ -116,7 +116,7 @@ Create comprehensive examples:
 - [x] `examples/python/before-after/` - Python code samples
 - [x] `examples/text/before-after/` - Text cleanup examples
 - [x] `examples/workflows/` - Complete workflows showing skill application
-- [x] `examples/integration/` - Using Posit + EER skills together
+- [x] `examples/integration/` - Using Posit + Anti-Slop skills together
 - [x] `examples/bad/` - High-slop examples with scores for testing
 
 **Why**: Concrete examples demonstrate value immediately. Users learn faster from examples than documentation.
@@ -149,7 +149,7 @@ Add to CLAUDE.md or INTEGRATION.md:
 claude --skill r-lib/cli "explain cli_alert patterns"
 
 # 2. Write code
-# 3. Enforce quality (EER)
+# 3. Enforce quality (Anti-Slop)
 Rscript toolkit/scripts/detect_slop.R R/my-function.R --verbose
 ```
 
@@ -159,7 +159,7 @@ Rscript toolkit/scripts/detect_slop.R R/my-function.R --verbose
 claude --skill quarto/authoring "setup paper template"
 
 # 2. Write content
-# 3. Check quality (EER)
+# 3. Check quality (Anti-Slop)
 python toolkit/scripts/detect_slop.py paper.qmd
 claude --skill quarto/anti-slop "review paper.qmd"
 ```

@@ -55,20 +55,20 @@ When cloning this repository for the first time:
 
 ```bash
 # Option 1: Clone and init submodules in one command
-git clone --recursive https://github.com/emraher/eer-skills.git
+git clone --recursive https://github.com/your-username/anti-slop-skills.git
 
 # Option 2: Clone first, then init submodules
-git clone https://github.com/emraher/eer-skills.git
-cd eer-skills
+git clone https://github.com/your-username/anti-slop-skills.git
+cd anti-slop-skills
 git submodule update --init --recursive
 ```
 
 ## Complete Update Workflow
 
-To update your entire skill collection (EER skills + all external skills):
+To update your entire skill collection (Anti-Slop skills + all external skills):
 
 ```bash
-# 1. Update main EER skills repository
+# 1. Update main Anti-Slop skills repository
 git pull
 
 # 2. Update all submodules
@@ -241,7 +241,7 @@ git commit -m "Update humanizer after resolving conflicts"
 
 ## External Skill Usage
 
-### Using Posit Skills Alongside EER Skills
+### Using Posit Skills Alongside Anti-Slop Skills
 
 The Posit skills are in `external/posit-skills/`. To use them:
 
