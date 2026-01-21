@@ -1,0 +1,9 @@
+[submodule "humanizer"]
+	path = humanizer
+	url = https://github.com/blader/humanizer.git
+[submodule "external/cc-polymath"]
+	path = external/cc-polymath
+	url = https://github.com/rand/cc-polymath.git
+[submodule "external/posit-skills"]
+	path = external/posit-skills
+	url = https://github.com/posit-dev/skills.git

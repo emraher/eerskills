@@ -1,0 +1,119 @@
+{
+  "name": "eer-skills",
+  "owner": {
+    "name": "Emrah Er",
+    "email": "eer@eremrah.com"
+  },
+  "metadata": {
+    "description": "Quality enforcement layer for code, text, and design. Detects and prevents generic AI-generated patterns. Works complementary with any learning resource (books, courses, Posit skills). Includes active detection scripts.",
+    "version": "2.0.0"
+  },
+  "plugins": [
+    {
+      "name": "anti-slop",
+      "description": "Meta-skill that coordinates all anti-slop domain skills. Auto-loads appropriate skill based on file type.",
+      "source": "./",
+      "strict": false,
+      "version": "2.0.0",
+      "tags": ["meta-skill", "quality-enforcement", "coordinator"],
+      "skills": [
+        "./anti-slop"
+      ]
+    },
+    {
+      "name": "toolkit",
+      "description": "Active detection and cleanup scripts. Automated slop scoring for text and R code files.",
+      "source": "./",
+      "strict": false,
+      "version": "2.0.0",
+      "tags": ["automation", "quality-assurance", "ci-cd", "linting"],
+      "skills": [
+        "./toolkit"
+      ]
+    },
+    {
+      "name": "text",
+      "description": "Technical writing quality enforcement. Removes transitions, buzzwords, filler, and meta-commentary.",
+      "source": "./",
+      "strict": false,
+      "version": "2.0.0",
+      "tags": ["technical-writing", "documentation", "content-quality"],
+      "skills": [
+        "./text/anti-slop"
+      ]
+    },
+    {
+      "name": "humanizer",
+      "description": "Wikipedia's 24-pattern checklist for removing AI writing signatures. Adds personality and voice to text.",
+      "source": "./",
+      "strict": false,
+      "version": "2.0.0",
+      "tags": ["writing", "voice", "style", "humanization"],
+      "skills": [
+        "./humanizer"
+      ]
+    },
+    {
+      "name": "design",
+      "description": "Visual design quality enforcement. Detects cookie-cutter layouts, generic gradients, and 'AI startup' aesthetic.",
+      "source": "./",
+      "strict": false,
+      "version": "2.0.0",
+      "tags": ["design", "ui", "visual-quality", "branding"],
+      "skills": [
+        "./design/anti-slop"
+      ]
+    },
+    {
+      "name": "r",
+      "description": "R code quality enforcement. Namespace qualification, explicit returns, no generic names (df, data, result).",
+      "source": "./",
+      "strict": false,
+      "version": "2.0.0",
+      "tags": ["r", "tidyverse", "code-quality", "data-science"],
+      "skills": [
+        "./r/anti-slop"
+      ]
+    },
+    {
+      "name": "python",
+      "description": "Python code quality enforcement. Type hints, docstrings, PEP 8 compliance, pandas best practices.",
+      "source": "./",
+      "strict": false,
+      "version": "2.0.0",
+      "tags": ["python", "type-hints", "code-quality", "data-science"],
+      "skills": [
+        "./python/anti-slop"
+      ]
+    },
+    {
+      "name": "quarto",
+      "description": "Quarto/RMarkdown quality enforcement. Prevents generic research documents, ensures reproducibility.",
+      "source": "./",
+      "strict": false,
+      "version": "2.0.0",
+      "tags": ["quarto", "rmarkdown", "reproducibility", "research"],
+      "skills": [
+        "./quarto/anti-slop"
+      ]
+    },
+    {
+      "name": "julia",
+      "description": "Julia code quality enforcement for scientific computing",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./julia/anti-slop"
+      ]
+    },
+    {
+      "name": "cpp",
+      "description": "C++ and Rcpp quality enforcement for performance-critical code",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./cpp/anti-slop"
+      ]
+    }
+  ]
+}

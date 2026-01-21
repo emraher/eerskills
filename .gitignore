@@ -1,0 +1,24 @@
+# Temporary files
+*.backup
+.DS_Store
+
+# Task output files
+/private/tmp/
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Python
+__pycache__/
+*.py[cod]
+*.so
+.Python
+
+# R
+.Rhistory
+.RData
+.Rproj.user/
