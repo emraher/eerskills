@@ -28,16 +28,6 @@
       "description": "Meta-skill that coordinates all anti-slop domain skills. Auto-loads appropriate skill based on file type.",
       "source": "./",
       "strict": false,
-      "version": "2.0.0",
-      "tags": ["meta-skill", "quality-enforcement", "coordinator"],
-      "applies_to": [
-        "**/*.R",
-        "**/*.py",
-        "**/*.md",
-        "**/*.jl",
-        "**/*.cpp",
-        "**/*.qmd"
-      ],
       "skills": [
         "./anti-slop"
       ]
@@ -47,14 +37,6 @@
       "description": "Active detection and cleanup scripts. Automated slop scoring for text and R code files.",
       "source": "./",
       "strict": false,
-      "version": "2.0.0",
-      "tags": ["automation", "quality-assurance", "ci-cd", "linting"],
-      "applies_to": [
-        "**/*.py",
-        "**/*.R",
-        "**/*.md",
-        "**/*.txt"
-      ],
       "skills": [
         "./toolkit"
       ]
@@ -64,13 +46,6 @@
       "description": "Technical writing quality enforcement. Removes transitions, buzzwords, filler, and meta-commentary.",
       "source": "./",
       "strict": false,
-      "version": "2.0.0",
-      "tags": ["technical-writing", "documentation", "content-quality"],
-      "applies_to": [
-        "**/*.md",
-        "**/*.txt",
-        "**/*.rst"
-      ],
       "skills": [
         "./text/anti-slop"
       ]
@@ -80,13 +55,6 @@
       "description": "Wikipedia's 24-pattern checklist for removing AI writing signatures. Adds personality and voice to text.",
       "source": "./",
       "strict": false,
-      "version": "2.0.0",
-      "tags": ["writing", "voice", "style", "humanization"],
-      "applies_to": [
-        "**/*.md",
-        "**/*.txt",
-        "README.md"
-      ],
       "skills": [
         "./external/humanizer"
       ]
@@ -96,14 +64,6 @@
       "description": "Visual design quality enforcement. Detects cookie-cutter layouts, generic gradients, and 'AI startup' aesthetic.",
       "source": "./",
       "strict": false,
-      "version": "2.0.0",
-      "tags": ["design", "ui", "visual-quality", "branding"],
-      "applies_to": [
-        "**/*.figma",
-        "**/*.sketch",
-        "design-review",
-        "ui-audit"
-      ],
       "skills": [
         "./design/anti-slop"
       ]
@@ -113,13 +73,6 @@
       "description": "R code quality enforcement. Namespace qualification, explicit returns, no generic names (df, data, result).",
       "source": "./",
       "strict": false,
-      "version": "2.0.0",
-      "tags": ["r", "tidyverse", "code-quality", "data-science"],
-      "applies_to": [
-        "**/*.R",
-        "**/*.Rmd",
-        "R/"
-      ],
       "skills": [
         "./r/anti-slop"
       ]
@@ -129,12 +82,6 @@
       "description": "Python code quality enforcement. Type hints, docstrings, PEP 8 compliance, pandas best practices.",
       "source": "./",
       "strict": false,
-      "version": "2.0.0",
-      "tags": ["python", "type-hints", "code-quality", "data-science"],
-      "applies_to": [
-        "**/*.py",
-        "**/*.ipynb"
-      ],
       "skills": [
         "./python/anti-slop"
       ]
@@ -144,13 +91,6 @@
       "description": "Quarto/RMarkdown quality enforcement. Prevents generic research documents, ensures reproducibility.",
       "source": "./",
       "strict": false,
-      "version": "2.0.0",
-      "tags": ["quarto", "rmarkdown", "reproducibility", "research"],
-      "applies_to": [
-        "**/*.qmd",
-        "**/*.Rmd",
-        "**/*.ipynb"
-      ],
       "skills": [
         "./quarto/anti-slop"
       ]
@@ -160,11 +100,6 @@
       "description": "Julia code quality enforcement for scientific computing. Type stability and multiple dispatch.",
       "source": "./",
       "strict": false,
-      "version": "2.0.0",
-      "tags": ["julia", "scientific-computing", "type-stability"],
-      "applies_to": [
-        "**/*.jl"
-      ],
       "skills": [
         "./julia/anti-slop"
       ]
@@ -174,14 +109,6 @@
       "description": "C++ and Rcpp quality enforcement for performance-critical code. Memory safety and Rcpp best practices.",
       "source": "./",
       "strict": false,
-      "version": "2.0.0",
-      "tags": ["cpp", "rcpp", "performance", "memory-safety"],
-      "applies_to": [
-        "**/*.cpp",
-        "**/*.h",
-        "**/*.hpp",
-        "src/"
-      ],
       "skills": [
         "./cpp/anti-slop"
       ]
