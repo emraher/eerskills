@@ -52,6 +52,7 @@ All skills now follow a consistent progressive disclosure pattern:
 **Content quality:**
 - `text/anti-slop/` - Technical writing (remove transitions, buzzwords, filler) (✅ v2.0.0)
 - `external/humanizer/` - Wikipedia 24-pattern checklist (add personality, remove AI signatures) (✅ v2.0.0, submodule)
+- `external/elements-of-style/` - Strunk's timeless writing principles for clear, concise prose (✅ v2.0.0, submodule)
 - `quarto/anti-slop/` - Reproducible research documents (no template-derived content) (✅ v2.0.0)
 
 **Design quality:**
@@ -233,6 +234,29 @@ These skills are a **quality enforcement layer** that works alongside Posit's ho
 
 The skills are **complementary equals**, not dependent/subordinate.
 
+### Content Quality Workflow (Text)
+
+For technical writing, use these three skills in sequence:
+
+1. **text/anti-slop** → Remove AI patterns (transitions, buzzwords, filler)
+2. **elements-of-style** → Apply Strunk's principles (active voice, concrete language, brevity)
+3. **humanizer** → Add authentic voice and personality
+
+**Example**:
+```bash
+# Step 1: Remove slop
+python toolkit/scripts/clean_slop.py README.md --save
+
+# Step 2: Apply Strunk's principles (Rules 10-13 most important)
+# - Rule 10: Use active voice
+# - Rule 11: Put statements in positive form
+# - Rule 12: Use definite, specific, concrete language
+# - Rule 13: Omit needless words
+
+# Step 3: Add voice with humanizer
+# Remove Wikipedia's 24 AI writing patterns, add personality
+```
+
 ## File Organization
 
 ```
@@ -272,6 +296,7 @@ anti-slop-skills/
 │
 ├── external/              # External submodules
 │   ├── humanizer/        # [SUBMODULE] Voice/personality
+│   ├── elements-of-style/ # [SUBMODULE] Strunk's writing principles
 │   ├── cc-polymath/      # [SUBMODULE] Additional anti-slop patterns
 │   └── posit-skills/     # [SUBMODULE] Posit's official skills
 │
@@ -290,6 +315,7 @@ Each skill enforces specific quality standards:
 - **python/anti-slop**: Type hints + docstrings required, PEP 8 compliance
 - **text/anti-slop**: Remove transitions, buzzwords, filler, meta-commentary
 - **humanizer**: Wikipedia's 24 AI writing patterns, add voice
+- **elements-of-style**: Strunk's 18 rules for clear, concise writing
 - **design/anti-slop**: Detect "AI startup" aesthetic, cookie-cutter layouts
 - **quarto/anti-slop**: Ensure reproducibility, prevent template documents
 - **toolkit**: Active automated detection with scoring

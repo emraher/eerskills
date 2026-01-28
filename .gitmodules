@@ -7,3 +7,6 @@
 [submodule "external/posit-skills"]
 	path = external/posit-skills
 	url = https://github.com/posit-dev/skills.git
+[submodule "external/elements-of-style"]
+	path = external/elements-of-style
+	url = https://github.com/emraher/the-elements-of-style

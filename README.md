@@ -74,17 +74,21 @@ anti-slop-skills/
 
 ### Submodules (in external/)
 
-This repository includes three external repositories as git submodules in the `external/` directory:
+This repository includes four external repositories as git submodules in the `external/` directory:
 
 1. **external/humanizer/** - [blader/humanizer](https://github.com/blader/humanizer)
    - Wikipedia's 24-pattern checklist for removing AI writing signatures
    - Adds personality and voice to text
 
-2. **external/cc-polymath/** - [rand/cc-polymath](https://github.com/rand/cc-polymath/tree/main/skills/anti-slop)
+2. **external/elements-of-style/** - [emraher/the-elements-of-style](https://github.com/emraher/the-elements-of-style)
+   - Strunk's 18 timeless writing principles
+   - Clear, concise prose for documentation and technical writing
+
+3. **external/cc-polymath/** - [rand/cc-polymath](https://github.com/rand/cc-polymath/tree/main/skills/anti-slop)
    - Additional anti-slop patterns and skills
    - Community-contributed quality enforcement
 
-3. **external/posit-skills/** - [posit-dev/skills](https://github.com/posit-dev/skills)
+4. **external/posit-skills/** - [posit-dev/skills](https://github.com/posit-dev/skills)
    - Official Posit skills for R, Quarto, and open-source development
    - Complementary how-to resources
 
@@ -99,6 +103,7 @@ This repository includes three external repositories as git submodules in the `e
 ### Content Quality
 - **text/anti-slop** - Technical writing (remove transitions, buzzwords, filler)
 - **external/humanizer** - Wikipedia 24-pattern checklist (add personality, remove AI signatures)
+- **external/elements-of-style** - Strunk's 18 rules for clear, concise writing
 - **quarto/anti-slop** - Reproducible research documents
 
 ### Design Quality
@@ -159,6 +164,9 @@ For full details, see [docs/SUBMODULES.md](docs/SUBMODULES.md).
 # Update just humanizer
 cd external/humanizer && git pull origin main && cd ../..
 
+# Update just elements-of-style
+cd external/elements-of-style && git pull origin main && cd ../..
+
 # Update just Posit skills
 cd external/posit-skills && git pull origin main && cd ../..
 
@@ -192,6 +200,7 @@ rm -rf .git/modules/<path>
 ### To Submodules
 - Submit issues/PRs to their respective repositories:
   - Humanizer: https://github.com/blader/humanizer
+  - Elements of Style: https://github.com/emraher/the-elements-of-style
   - CC-Polymath: https://github.com/rand/cc-polymath
   - Posit Skills: https://github.com/posit-dev/skills
 
@@ -206,6 +215,7 @@ rm -rf .git/modules/<path>
 See individual repositories for license information:
 - Anti-slop skills: [LICENSE](./LICENSE)
 - Humanizer: See [blader/humanizer](https://github.com/blader/humanizer/blob/main/README.md#license)
+- Elements of Style: Public Domain - see [emraher/the-elements-of-style](https://github.com/emraher/the-elements-of-style/blob/main/LICENSE)
 - CC-Polymath: See [rand/cc-polymath](https://github.com/rand/cc-polymath/blob/main/LICENSE)
 - Posit Skills: See [posit-dev/skills](https://github.com/posit-dev/skills/blob/main/LICENSE)
 
