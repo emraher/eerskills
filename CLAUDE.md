@@ -50,7 +50,7 @@ All skills now follow a consistent progressive disclosure pattern:
 - `cpp/anti-slop/` - C++/Rcpp performance code standards (🔄 v1.0.0, needs restructure)
 
 **Content quality:**
-- `text/anti-slop/` - Technical writing (remove transitions, buzzwords, filler) (✅ v2.0.0)
+- `text/anti-slop/` - Comprehensive text quality coordinator (all 3 layers: pattern removal + Strunk + voice) (✅ v3.0.0)
 - `external/humanizer/` - Wikipedia 24-pattern checklist (add personality, remove AI signatures) (✅ v2.0.0, submodule)
 - `external/elements-of-style/` - Strunk's timeless writing principles for clear, concise prose (✅ v2.0.0, submodule)
 - `quarto/anti-slop/` - Reproducible research documents (no template-derived content) (✅ v2.0.0)
@@ -64,7 +64,7 @@ All skills now follow a consistent progressive disclosure pattern:
 
 **Detect slop in text files** (returns score 0-100):
 ```bash
-python toolkit/scripts/detect_slop.py <file.md> [--verbose]
+python3 toolkit/scripts/detect_slop.py <file.md> [--verbose]
 ```
 
 **Detect slop in R code**:
@@ -75,9 +75,9 @@ Rscript toolkit/scripts/detect_slop.R R/ [--verbose]  # entire directory
 
 **Clean up text files** (with backup):
 ```bash
-python toolkit/scripts/clean_slop.py <file.md>                    # preview
-python toolkit/scripts/clean_slop.py <file.md> --save             # apply
-python toolkit/scripts/clean_slop.py <file.md> --save --aggressive # more aggressive
+python3 toolkit/scripts/clean_slop.py <file.md>                    # preview
+python3 toolkit/scripts/clean_slop.py <file.md> --save             # apply
+python3 toolkit/scripts/clean_slop.py <file.md> --save --aggressive # more aggressive
 ```
 
 ### Code Formatting
@@ -139,20 +139,35 @@ black script.py && ruff check script.py && mypy script.py
 - `reference/pandas.md` - DataFrame operations, method chaining
 - `reference/testing.md` - Pytest patterns, fixtures, mocking
 
-### Text Anti-Slop (text/anti-slop/SKILL.md)
+### Text Anti-Slop (text/anti-slop/SKILL.md) - v3.0.0
 
-**Remove immediately:**
-- "delve into" → delete or "examine"
-- "navigate the complexities" → specific challenge or delete
-- "in order to" → "to"
-- "It's important to note that" → delete, state the point
-- Meta-commentary ("In this document...")
+**Comprehensive coordinator** that applies three systems automatically:
+
+**Layer 1: Pattern Removal**
+- Remove transitions ("delve into", "navigate")
+- Remove buzzwords ("leverage", "empower")
+- Remove meta-commentary ("In this document...")
+- Remove filler ("in order to" → "to")
+
+**Layer 2: Strunk's Principles** (from external/elements-of-style)
+- Rule 10: Active voice
+- Rule 11: Positive form
+- Rule 12: Concrete language
+- Rule 13: Omit needless words
+
+**Layer 3: Human Voice** (from external/humanizer)
+- Remove Wikipedia's 24 AI patterns
+- Add personality and opinions
+- Vary sentence rhythm
+- First person when appropriate
 
 **Detection:**
 ```bash
-python toolkit/scripts/detect_slop.py README.md --verbose
-python toolkit/scripts/clean_slop.py README.md --save
+python3 toolkit/scripts/detect_slop.py README.md --verbose
+python3 toolkit/scripts/clean_slop.py README.md --save
 ```
+
+**One invocation = all three layers applied automatically.**
 
 **Reference files** (planned):
 - `reference/transitions.md` - Overused connecting phrases
@@ -220,8 +235,8 @@ Quality enforcement layer that works alongside any learning resource:
 |------|------------|-----------------|--------------|
 | Write R package functions | R Packages book, cli docs | r/anti-slop | Learn structure + enforce quality |
 | Create Quarto docs | Quarto docs | quarto/anti-slop | Learn syntax + detect slop |
-| Write package docs | Documentation guides | text/anti-slop | Learn format + enforce clarity |
-| Technical writing | Style guides | humanizer | Learn conventions + add voice |
+| Write package docs | Documentation guides | text/anti-slop (v3.0.0) | Learn format + comprehensive quality (all 3 layers) |
+| Technical writing | Style guides | text/anti-slop (v3.0.0) | Learn conventions + comprehensive quality (all 3 layers) |
 
 ### Workflow Example
 
@@ -234,28 +249,34 @@ Quality enforcement layer that works alongside any learning resource:
 
 Anti-slop is independent quality enforcement, not tied to specific learning resources.
 
-### Content Quality Workflow (Text)
+### Content Quality Workflow (Text) - v3.0.0
 
-For technical writing, use these three skills in sequence:
+**New: Single-invocation comprehensive quality**
 
-1. **text/anti-slop** → Remove AI patterns (transitions, buzzwords, filler)
-2. **elements-of-style** → Apply Strunk's principles (active voice, concrete language, brevity)
-3. **humanizer** → Add authentic voice and personality
+**text/anti-slop** now automatically applies all three layers:
+1. **Pattern Removal** → Remove transitions, buzzwords, filler, meta-commentary
+2. **Strunk's Principles** (external/elements-of-style) → Active voice, concrete language, brevity
+3. **Human Voice** (external/humanizer) → Remove Wikipedia's 24 AI patterns, add personality
 
-**Example**:
+**Workflow**:
 ```bash
-# Step 1: Remove slop
-python toolkit/scripts/clean_slop.py README.md --save
+# Single invocation applies all three layers
+# (Use the text/anti-slop skill when reviewing/writing text)
 
-# Step 2: Apply Strunk's principles (Rules 10-13 most important)
-# - Rule 10: Use active voice
-# - Rule 11: Put statements in positive form
-# - Rule 12: Use definite, specific, concrete language
-# - Rule 13: Omit needless words
+# Verify quality score
+python3 toolkit/scripts/detect_slop.py README.md --verbose
+# Target: < 20 (low slop)
 
-# Step 3: Add voice with humanizer
-# Remove Wikipedia's 24 AI writing patterns, add personality
+# Optional: Automated cleanup for Layer 1 patterns
+python3 toolkit/scripts/clean_slop.py README.md --save
 ```
+
+**Old workflow** (deprecated but still available):
+You can still invoke the external skills separately if you need granular control:
+- external/humanizer → Voice/personality only
+- external/elements-of-style → Strunk's rules only
+
+**Most users should just use text/anti-slop** (applies all three automatically).
 
 ## File Organization
 
@@ -312,7 +333,7 @@ Each skill enforces specific quality standards:
 
 - **r/anti-slop**: No generic names (`df`, `data`), always `::`, explicit `return()`
 - **python/anti-slop**: Type hints + docstrings required, PEP 8 compliance
-- **text/anti-slop**: Remove transitions, buzzwords, filler, meta-commentary
+- **text/anti-slop** (v3.0.0): Comprehensive coordinator (pattern removal + Strunk + voice in one invocation)
 - **humanizer**: Wikipedia's 24 AI writing patterns, add voice
 - **elements-of-style**: Strunk's 18 rules for clear, concise writing
 - **design/anti-slop**: Detect "AI startup" aesthetic, cookie-cutter layouts
@@ -365,7 +386,7 @@ When working in this repository:
 - Apply the quality standards to your own output
 - Use detection scripts proactively
 - Reference specific patterns by file:line
-- For prose, apply text/anti-slop + humanizer
+- For prose, apply text/anti-slop (v3.0.0 applies all layers automatically)
 - Default to specific and concrete over abstract
 - These skills are independent quality enforcement, not dependent on Posit
 - All v2.0.0 skills follow the new structure pattern
