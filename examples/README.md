@@ -10,10 +10,10 @@ Run the toolkit detection scripts against these files to see the difference in s
 
 ```bash
 # Detect slop (High score expected)
-python ../toolkit/scripts/detect_slop.py text/before-after/documentation_slop.md
+python3 ../toolkit/scripts/detect_slop.py text/before-after/documentation_slop.md
 
 # Detect clean (Low score expected)
-python ../toolkit/scripts/detect_slop.py text/before-after/documentation_clean.md
+python3 ../toolkit/scripts/detect_slop.py text/before-after/documentation_clean.md
 ```
 
 ### R Code Analysis

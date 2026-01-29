@@ -275,10 +275,10 @@ bibliography: references.bib
 **Quick example**:
 ```bash
 # Detect slop
-python scripts/detect_slop.py report.md --verbose
+python3 scripts/detect_slop.py report.md --verbose
 
 # Clean slop
-python scripts/clean_slop.py report.md --save
+python3 scripts/clean_slop.py report.md --save
 
 # Check R code
 Rscript scripts/detect_slop.R analysis.R
@@ -367,7 +367,7 @@ The anti-slop skills are **quality enforcement tools** that work alongside any l
 
 ```bash
 # Detect across project
-find . -name "*.md" -exec python scripts/detect_slop.py {} \;
+find . -name "*.md" -exec python3 scripts/detect_slop.py {} \;
 find . -name "*.R" -exec Rscript scripts/detect_slop.R {} \;
 
 # Apply domain skills as needed

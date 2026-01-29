@@ -120,13 +120,13 @@ External skill collections included as git submodules:
 
 ```bash
 # Detect slop in text files (returns score 0-100)
-python toolkit/scripts/detect_slop.py <file.md> [--verbose]
+python3 toolkit/scripts/detect_slop.py <file.md> [--verbose]
 
 # Detect slop in R code
 Rscript toolkit/scripts/detect_slop.R <file.R> [--verbose]
 
 # Clean up text files (with backup)
-python toolkit/scripts/clean_slop.py <file.md> --save
+python3 toolkit/scripts/clean_slop.py <file.md> --save
 ```
 
 ### What the Scores Mean

@@ -66,20 +66,20 @@ claude --skill quarto/authoring "setup paper template"
 
 # 2. Write content
 # 3. Check quality (Anti-Slop)
-python toolkit/scripts/detect_slop.py paper.qmd
+python3 toolkit/scripts/detect_slop.py paper.qmd
 claude --skill quarto/anti-slop "review paper.qmd"
 ```
 
 **Cleaning up AI-generated text:**
 ```bash
 # 1. Detect issues
-python toolkit/scripts/detect_slop.py README.md --verbose
+python3 toolkit/scripts/detect_slop.py README.md --verbose
 
 # 2. Preview fixes
-python toolkit/scripts/clean_slop.py README.md
+python3 toolkit/scripts/clean_slop.py README.md
 
 # 3. Apply with backup
-python toolkit/scripts/clean_slop.py README.md --save
+python3 toolkit/scripts/clean_slop.py README.md --save
 ```
 
 ## Complementary Use Patterns

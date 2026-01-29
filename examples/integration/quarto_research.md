@@ -37,6 +37,6 @@ ggplot2::ggplot(
 ## Step 4: Final Review (Anti-Slop)
 Run detection scripts:
 ```bash
-python toolkit/scripts/detect_slop.py paper.qmd
+python3 toolkit/scripts/detect_slop.py paper.qmd
 Rscript toolkit/scripts/detect_slop.R R/analysis.R
 ```

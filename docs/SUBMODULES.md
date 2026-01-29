@@ -231,7 +231,7 @@ git commit -m "Update humanizer after resolving conflicts"
 4. **Test After Updates**: After updating submodules, test that everything still works
    ```bash
    # Run your detection scripts
-   python toolkit/scripts/detect_slop.py test.md
+   python3 toolkit/scripts/detect_slop.py test.md
    ```
 
 5. **Commit Submodule Updates**: Don't forget to commit when submodules change
