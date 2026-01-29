@@ -14,22 +14,20 @@ related_skills:
 version: 2.0.0
 ---
 
-# Python Anti-Slop Skill for Data Science
+# Python Anti-Slop: No More `data = df`
 
-## When to Use This Skill
+## When to Use This
 
-Use python-anti-slop when:
-- ✓ Writing new Python code for data analysis or packages
-- ✓ Reviewing AI-generated Python code before committing
-- ✓ Refactoring existing code for production quality
-- ✓ Building data science pipelines
-- ✓ Teaching or enforcing Python code standards
-- ✓ Working with pandas, numpy, sklearn, matplotlib
+Use for:
+- ✓ Python code going to production or teammates
+- ✓ AI-generated code (catches missing type hints, `def process_data(data):`)
+- ✓ Data science pipelines (pandas, numpy, sklearn)
+- ✓ Any code that needs to be maintained
 
-Do NOT use when:
-- Writing quick exploratory notebooks (though standards still help)
-- Working with legacy code that cannot be changed
-- Following different established style guides (e.g., Google Python Style)
+Skip for:
+- Quick notebook experiments (but habits stick)
+- Legacy code you inherited
+- Different style guides (Google, etc.) that override
 
 ## Quick Example
 

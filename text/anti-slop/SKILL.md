@@ -16,25 +16,23 @@ related_skills:
 version: 2.0.0
 ---
 
-# Text Anti-Slop Skill for Technical Writing
+# Text Anti-Slop: Technical Writing That Doesn't Waste Time
 
-## When to Use This Skill
+## When to Use This
 
-Use text-anti-slop when:
-- ✓ Writing technical documentation, README files, or guides
-- ✓ Reviewing AI-generated documentation before publishing
-- ✓ Cleaning up marketing language in technical content
-- ✓ Editing academic or research writing
-- ✓ Preparing content for professional publication
-- ✓ Teaching writing standards to teams
+Use this skill when writing or reviewing:
+- ✓ Technical docs, READMEs, guides
+- ✓ AI-generated documentation (before anyone sees it)
+- ✓ Academic or research writing
+- ✓ Anything going to users or teammates
 
-Do NOT use when:
-- Writing creative fiction (different standards)
-- Legal documents (require specific phrasings)
-- Marketing copy (intentionally uses persuasive language)
-- Following specific style guides (AP, Chicago, etc.)
+Skip this for:
+- Creative fiction (different game)
+- Legal documents (they need their specific phrasings)
+- Marketing copy (persuasion has its own rules)
+- Style guide compliance (AP, Chicago override this)
 
-For the **24-pattern Wikipedia humanizer checklist**, use the separate **humanizer** skill.
+**Note:** This catches technical writing slop. For personality and voice, use the **humanizer** skill.
 
 ## Quick Example
 

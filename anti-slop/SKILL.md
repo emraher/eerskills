@@ -16,25 +16,29 @@ includes:
 version: 2.0.0
 ---
 
-# Anti-Slop Meta-Skill
+# Anti-Slop: The Dispatcher
 
-## Purpose
+## What This Does
 
-The anti-slop meta-skill is a coordinator that automatically applies the appropriate domain-specific anti-slop skill based on file type and context. It provides a unified entry point for quality enforcement across all content types.
+You invoke "anti-slop" without specifying which domain. This skill figures it out.
 
-## When to Use This Skill
+Working on a `.R` file? Routes to r/anti-slop (catches `df`, missing `::`, implicit returns).
+Editing a `.py` file? Routes to python/anti-slop (checks type hints, descriptive names).
+Writing `.md` docs? Routes to text/anti-slop (kills "delve into", buzzwords, meta-commentary).
 
-Use the anti-slop meta-skill when:
-- ✓ You want automatic routing to the correct domain skill
-- ✓ Working with mixed content types (code + docs + design)
-- ✓ Need comprehensive quality review across project
-- ✓ User explicitly requests "anti-slop" without specifying domain
-- ✓ Establishing quality standards for entire project
+One skill name, automatic routing.
 
-Use specific domain skills when:
-- You know exactly which domain applies
-- Deep expertise in one area needed
-- Custom configuration for specific file types
+## When to Use This
+
+**Use anti-slop (this meta-skill) when:**
+- ✓ You want automatic domain detection
+- ✓ Working with multiple file types (code + docs + design)
+- ✓ User says "check for slop" without specifying where
+
+**Use specific skills (r/anti-slop, python/anti-slop, etc.) when:**
+- You know exactly which domain
+- Need domain-specific deep dive
+- Configuring custom rules
 
 ## Quick Overview
 
@@ -431,7 +435,7 @@ find . -name "*.R" -exec Rscript scripts/detect_slop.R {} \;
 
 The anti-slop skills are **NOT** subordinate to any other skill set. They are:
 
-1. **Complementary equals** - Work alongside Posit, books, courses
+1. **Complementary equals** - Work alongside books, courses, documentation
 2. **Quality enforcers** - Prevent generic AI patterns
 3. **Domain-specific** - Each skill has unique expertise
 4. **Independently valuable** - Useful without other resources
@@ -441,7 +445,7 @@ The anti-slop skills are **NOT** subordinate to any other skill set. They are:
 ```
 User writes code/docs
     ↓
-Learning resource teaches syntax/features (Posit, books, etc.)
+Learning resource teaches syntax/features (books, docs, tutorials)
     ↓
 Anti-slop enforces quality standards
     ↓

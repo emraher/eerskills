@@ -1,56 +1,59 @@
 # Anti-Slop Skills
 
-A quality enforcement layer that detects and prevents generic AI-generated patterns across code, text, and design.
+**Version:** v2.0.0
 
-## Version
+Catch generic AI patterns before they ship. Works with any learning resource.
 
-**v2.0.0** - Complete restructure with workflow-focused patterns
+## The Problem
 
-## What Makes This Different
+AI writes code like this:
+```python
+def process_data(data):
+    """Process the data."""
+    result = do_something(data)
+    return result
+```
 
-This is NOT a how-to guide. This is a **pattern detection and quality enforcement system**.
+Variables named `data` and `result`. Circular documentation. Functions that "process" things.
 
-- **Learning resources** (books, courses, Posit skills) teach you how to use tools and structure projects
-- **Anti-slop skills** detect and prevent generic AI garbage
-- **Together** they provide complete coverage: learning + quality
+Anti-slop catches this before it reaches production.
 
-These skills work alongside ANY learning resource, including Posit skills.
+## What You Get
 
-## Quick Start
+**Learning resources** teach syntax. Books show patterns. Anti-slop enforces quality.
 
-### Installation
+- Automated detection scripts that score your code (0-100)
+- Domain-specific skills for R, Python, Julia, C++
+- Text analysis that flags buzzwords and filler
+- Design pattern detection for cookie-cutter layouts
 
-1. **Clone this repository**:
-   ```bash
-   git clone https://github.com/your-username/anti-slop-skills.git ~/.claude/skills/anti-slop-skills
-   cd ~/.claude/skills/anti-slop-skills
-   ```
+## Installation
 
-2. **Initialize submodules** (external skill collections):
-   ```bash
-   git submodule update --init --recursive
-   ```
-
-3. **Verify installation**:
-   ```bash
-   ls -la
-   # Should see: anti-slop/, r/, python/, text/, design/, quarto/, toolkit/, external/
-
-   ls -la external/
-   # Should see: humanizer/, cc-polymath/, elements-of-style/
-   ```
-
-### Update All Skills
-
-To pull the latest updates from all repositories (your skills + submodules):
+Clone and initialize:
 
 ```bash
-# Update main repository
-git pull
+git clone https://github.com/your-username/anti-slop-skills.git ~/.claude/skills/anti-slop-skills
+cd ~/.claude/skills/anti-slop-skills
+git submodule update --init --recursive
+```
 
-# Update all submodules (humanizer, cc-polymath, elements-of-style)
+Verify you have the core directories:
+
+```bash
+ls -la
+# anti-slop/, r/, python/, text/, design/, quarto/, toolkit/, external/
+```
+
+### Staying Updated
+
+Pull latest changes:
+
+```bash
+git pull
 git submodule update --remote --merge
 ```
+
+That's it. Main repo + all submodules updated.
 
 ## Repository Structure
 
@@ -74,7 +77,7 @@ anti-slop-skills/
 
 ### Submodules (in external/)
 
-This repository includes four external repositories as git submodules in the `external/` directory:
+External skill collections included as git submodules:
 
 1. **external/humanizer/** - [blader/humanizer](https://github.com/blader/humanizer)
    - Wikipedia's 24-pattern checklist for removing AI writing signatures
@@ -88,32 +91,28 @@ This repository includes four external repositories as git submodules in the `ex
    - Additional anti-slop patterns and skills
    - Community-contributed quality enforcement
 
-4. **external/elements-of-style/** - [emraher/the-elements-of-style](https://github.com/emraher/the-elements-of-style)
-   - Strunk's 18 principles for clear, concise writing
-   - Timeless writing standards
+## What's Inside
 
-## Core Skills
+**Code enforcement:**
+- `r/anti-slop` - No more `df` and `data` variables. Always use `pkg::function()`. Explicit `return()` statements.
+- `python/anti-slop` - Type hints required. Docstrings required. No mutable default arguments.
+- `julia/anti-slop` - Type stability. Multiple dispatch best practices.
+- `cpp/anti-slop` - Memory safety. Const-correctness for Rcpp.
 
-### Code Quality
-- **r/anti-slop** - R code enforcement (namespace `::`, explicit `return()`, no `df`/`data`)
-- **python/anti-slop** - Python enforcement (type hints, docstrings, PEP 8)
-- **julia/anti-slop** - Julia scientific computing standards
-- **cpp/anti-slop** - C++/Rcpp performance code standards
+**Writing cleanup:**
+- `text/anti-slop` - Kills "delve into", "navigate the complexity", "in order to"
+- `humanizer` - Wikipedia's 24 AI patterns. Adds actual voice.
+- `elements-of-style` - Strunk's rules. Active voice. Omit needless words.
+- `quarto/anti-slop` - No template documents. Reproducibility checks.
 
-### Content Quality
-- **text/anti-slop** - Technical writing (remove transitions, buzzwords, filler)
-- **external/humanizer** - Wikipedia 24-pattern checklist (add personality, remove AI signatures)
-- **external/elements-of-style** - Strunk's 18 rules for clear, concise writing
-- **quarto/anti-slop** - Reproducible research documents
+**Visual quality:**
+- `design/anti-slop` - Detects purple gradients, floating 3D shapes, "Empower your business"
 
-### Design Quality
-- **design/anti-slop** - Visual patterns ("AI startup" aesthetic detection)
+**Automation:**
+- `toolkit` - Scripts that actually run: `detect_slop.py`, `detect_slop.R`, `clean_slop.py`
 
-### Automation
-- **toolkit** - Detection scripts (`detect_slop.py`, `detect_slop.R`, `clean_slop.py`)
-
-### Meta
-- **anti-slop** - Coordinator that auto-loads domain skills by file type
+**Meta-coordinator:**
+- `anti-slop` - Auto-loads the right skill based on file type
 
 ## Quick Commands
 
@@ -130,29 +129,38 @@ Rscript toolkit/scripts/detect_slop.R <file.R> [--verbose]
 python toolkit/scripts/clean_slop.py <file.md> --save
 ```
 
-### Scoring Guide
+### What the Scores Mean
 
-| Score | Meaning | Action |
-|-------|---------|--------|
-| 0-20 | Low slop (authentic) | Minor tweaks |
-| 20-40 | Moderate (some patterns) | Review flagged items |
-| 40-60 | High (many patterns) | Significant cleanup |
-| 60+ | Severe (heavily generic) | Consider rewriting |
+| Score | Translation | What to Do |
+|-------|-------------|------------|
+| 0-20 | Looks human | Ship it (maybe tweak a line or two) |
+| 20-40 | Some AI fingerprints | Fix the flagged patterns |
+| 40-60 | Generic as hell | Major surgery needed |
+| 60+ | ChatGPT called | Start over |
 
-## Integration with Other Skills
+## How to Use This
 
-See [docs/INTEGRATION.md](docs/INTEGRATION.md) for detailed guidance on using Anti-Slop skills alongside Posit skills and other learning resources.
+**Step 1:** Learn from whatever source you prefer (books, docs, tutorials)
 
-### Quick Example
+**Step 2:** Write your code
 
-**Creating an R package function:**
-1. Use Posit's `r-lib/cli` to learn cli package structure
-2. Use `r/anti-slop` to ensure code isn't generic
-3. Run `Rscript toolkit/scripts/detect_slop.R` before committing
-4. Use Posit's `r-lib/testing` for test structure
-5. Use `r/anti-slop` to avoid generic test patterns
+**Step 3:** Catch the slop:
 
-The skills are **complementary equals**, not dependent/subordinate.
+```bash
+# Check text files
+python toolkit/scripts/detect_slop.py README.md --verbose
+
+# Check R code
+Rscript toolkit/scripts/detect_slop.R R/
+
+# Score: 0-20 is good, 60+ means rewrite it
+```
+
+**Step 4:** Apply the fixes using skill-specific guidance
+
+**Real example** - you write an R function with a variable called `df`. Detection script flags it. You check `r/anti-slop/SKILL.md`, see the forbidden names list, rename it to `survey_data`. Run detection again. Clean.
+
+This isn't a tutorial. It's the thing that catches what tutorials miss.
 
 ## Working with Submodules
 
@@ -190,32 +198,31 @@ rm -rf .git/modules/<path>
 
 ## Contributing
 
-### To Anti-Slop Skills (this repo)
-- Main skills in root directories (r/, python/, text/, etc.)
-- Follow v2.0.0 pattern (progressive disclosure)
-- Main SKILL.md + reference/ files
+Found a pattern we're missing? Add it.
 
-### To Submodules
-- Submit issues/PRs to their respective repositories:
-  - Humanizer: https://github.com/blader/humanizer
-  - Elements of Style: https://github.com/emraher/the-elements-of-style
-  - CC-Polymath: https://github.com/rand/cc-polymath
-  - Posit Skills: https://github.com/posit-dev/skills
+**For this repo:**
+- Skills go in root directories: `r/`, `python/`, `text/`
+- Follow v2.0.0 structure: main `SKILL.md` + `reference/` files
+- Show before/after examples
+
+**For submodules:**
+- Humanizer: https://github.com/blader/humanizer
+- Elements of Style: https://github.com/emraher/the-elements-of-style
+- CC-Polymath: https://github.com/rand/cc-polymath
 
 ## Documentation
 
-- **[docs/INTEGRATION.md](docs/INTEGRATION.md)** - Using Anti-Slop + Posit skills together
 - **[docs/SUBMODULES.md](docs/SUBMODULES.md)** - Submodule management guide
 - **CLAUDE.md** - Context for Claude Code
+- Individual **SKILL.md** files in each skill directory
 
 ## License
 
 See individual repositories for license information:
 - Anti-slop skills: [LICENSE](./LICENSE)
-- Humanizer: See [blader/humanizer](https://github.com/blader/humanizer/blob/main/README.md#license)
-- Elements of Style: Public Domain - see [emraher/the-elements-of-style](https://github.com/emraher/the-elements-of-style/blob/main/LICENSE)
-- CC-Polymath: See [rand/cc-polymath](https://github.com/rand/cc-polymath/blob/main/LICENSE)
-- Posit Skills: See [posit-dev/skills](https://github.com/posit-dev/skills/blob/main/LICENSE)
+- Humanizer: [blader/humanizer](https://github.com/blader/humanizer/blob/main/README.md#license)
+- Elements of Style: Public Domain - [emraher/the-elements-of-style](https://github.com/emraher/the-elements-of-style/blob/main/LICENSE)
+- CC-Polymath: [rand/cc-polymath](https://github.com/rand/cc-polymath/blob/main/LICENSE)
 
 ## Version History
 

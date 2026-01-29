@@ -8,13 +8,13 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ### What Makes This Different
 
-This is NOT a how-to guide. This is a **pattern detection and quality enforcement system**.
+Pattern detection and quality enforcement system, not a how-to guide.
 
-- **Posit skills** teach you how to use packages and structure projects
-- **Anti-slop skills** detect and prevent generic AI garbage
+- **Learning resources** (books, courses, documentation, skill libraries) teach how to use tools and structure projects
+- **Anti-slop skills** detect and prevent generic AI-generated patterns
 - **Together** they provide complete coverage: learning + quality
 
-These skills work alongside ANY learning resource: books, courses, documentation, or Posit skills.
+Works alongside any learning resource.
 
 ## Skill Structure (v2.0.0)
 
@@ -212,27 +212,27 @@ Detection scripts output scores (0-100, higher is worse):
 
 ## Integration with Other Skills
 
-### Complementary with Posit Skills
+### Complementary with Learning Resources
 
-These skills are a **quality enforcement layer** that works alongside Posit's how-to skills:
+Quality enforcement layer that works alongside any learning resource:
 
-| Task | Posit Skill | Anti-Slop Skill | Use Together |
-|------|-------------|-----------|--------------|
-| Write R package functions | r-lib/cli | r/anti-slop | Structure + quality |
-| Create Quarto docs | quarto/authoring | quarto/anti-slop | How-to + slop detection |
-| Write package docs | r-lib/lifecycle | text/anti-slop | Framework + clarity |
-| Release blog posts | open-source/release-post | humanizer | Structure + voice |
+| Task | Learn From | Anti-Slop Skill | Use Together |
+|------|------------|-----------------|--------------|
+| Write R package functions | R Packages book, cli docs | r/anti-slop | Learn structure + enforce quality |
+| Create Quarto docs | Quarto docs | quarto/anti-slop | Learn syntax + detect slop |
+| Write package docs | Documentation guides | text/anti-slop | Learn format + enforce clarity |
+| Technical writing | Style guides | humanizer | Learn conventions + add voice |
 
 ### Workflow Example
 
 **Creating an R package function:**
-1. Use Posit's `r-lib/cli` to learn cli package structure
-2. Use `r/anti-slop` to ensure code isn't generic
+1. Learn from R Packages book or package documentation
+2. Write implementation
 3. Run `Rscript toolkit/scripts/detect_slop.R` before committing
-4. Use Posit's `r-lib/testing` for test structure
-5. Use `r/anti-slop` to avoid generic test patterns
+4. Apply `r/anti-slop` standards: namespace `::`, explicit `return()`, descriptive names
+5. Iterate until quality standards met
 
-The skills are **complementary equals**, not dependent/subordinate.
+Anti-slop is independent quality enforcement, not tied to specific learning resources.
 
 ### Content Quality Workflow (Text)
 

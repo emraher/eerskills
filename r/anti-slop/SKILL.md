@@ -15,22 +15,20 @@ related_skills:
 version: 2.0.0
 ---
 
-# R Programming Anti-Slop Skill
+# R Anti-Slop: Stop Writing `df <- data`
 
-## When to Use This Skill
+## When to Use This
 
-Use r-anti-slop when:
-- ✓ Writing new R code for data analysis or packages
-- ✓ Reviewing AI-generated R code before committing
-- ✓ Refactoring existing code for production quality
-- ✓ Preparing R package for CRAN submission
-- ✓ Teaching or enforcing R code standards
-- ✓ Cleaning up generic variable names and patterns
+Use this for:
+- ✓ Any R code leaving your machine (analysis, packages, scripts)
+- ✓ AI-generated code review (catches `df`, `result`, missing `::`)
+- ✓ CRAN submissions (they'll reject generic code anyway)
+- ✓ Team code standards
 
-Do NOT use when:
-- Writing quick exploratory one-offs (though standards still help)
-- Working with legacy code that cannot be changed
-- Following different established style guides (e.g., Bioconductor)
+Skip for:
+- Quick console experiments (though habits form fast)
+- Legacy code you can't touch
+- Bioconductor or other style guides that override this
 
 ## Quick Example
 
