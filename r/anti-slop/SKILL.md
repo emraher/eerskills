@@ -12,8 +12,6 @@ tags: [r, tidyverse, code-quality, data-science]
 related_skills:
   - quarto/anti-slop
   - text/anti-slop
-  - external/posit-skills/r-lib/cli
-  - external/posit-skills/r-lib/testing
 version: 2.0.0
 ---
 
@@ -319,9 +317,9 @@ Before committing R code, verify:
    ```
 
 4. **Check CRAN-specific requirements**
-   - Use external/posit-skills/r-lib/cran-extrachecks skill
    - Validate URLs in DESCRIPTION and documentation
    - Check examples run in < 5 seconds
+   - Verify package structure meets CRAN standards
 
 **Expected outcome**: Clean `R CMD check` with no slop patterns
 
@@ -373,10 +371,8 @@ See **reference/tidyverse.md** for complete tidyverse conventions.
 
 ### Related Skills
 
-- **external/posit-skills/r-lib/cli** - Error message formatting with cli package
-- **external/posit-skills/r-lib/testing** - Test structure and best practices
-- **external/posit-skills/r-lib/cran-extrachecks** - CRAN submission requirements
 - **text/anti-slop** - For cleaning prose in documentation
+- **quarto/anti-slop** - For cleaning vignettes and documentation
 
 ### Tools
 

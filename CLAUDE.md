@@ -297,11 +297,10 @@ anti-slop-skills/
 ├── external/              # External submodules
 │   ├── humanizer/        # [SUBMODULE] Voice/personality
 │   ├── elements-of-style/ # [SUBMODULE] Strunk's writing principles
-│   ├── cc-polymath/      # [SUBMODULE] Additional anti-slop patterns
-│   └── posit-skills/     # [SUBMODULE] Posit's official skills
+│   └── cc-polymath/      # [SUBMODULE] Additional anti-slop patterns
 │
 ├── docs/                  # Documentation
-│   ├── INTEGRATION.md    # How to use with Posit skills
+│   ├── INTEGRATION.md    # How to integrate with other skills
 │   └── SUBMODULES.md     # Submodule management guide
 │
 └── CLAUDE.md              # Context for Claude Code

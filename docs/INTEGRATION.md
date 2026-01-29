@@ -530,7 +530,6 @@ skill list --verbose
 
 # Verify installation
 ls -la /path/to/anti-slop-skills
-ls -la /path/to/posit-skills
 
 # Check skill configuration
 cat ~/.skill-manager/config

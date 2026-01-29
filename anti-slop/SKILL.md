@@ -313,15 +313,6 @@ When anti-slop meta-skill is invoked, route based on:
 
 The anti-slop skills are **quality enforcement tools** that work alongside any learning resource:
 
-### Complementary Use with Posit Skills
-
-| Learning Resource | Teaches | Anti-Slop Enforces |
-|-------------------|---------|-------------------|
-| external/posit-skills/quarto/authoring | Quarto syntax & features | Reproducibility & quality standards |
-| external/posit-skills/r-lib/cli | cli package structure | No generic error messages |
-| external/posit-skills/r-lib/testing | testthat patterns | No generic test names |
-| external/posit-skills/r-lib/lifecycle | Deprecation workflow | Clear documentation |
-
 ### Complementary Use with Other Resources
 
 | Resource Type | Teaches | Anti-Slop Enforces |

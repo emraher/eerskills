@@ -9,7 +9,6 @@ This repository uses git submodules to integrate external skill collections. Thi
 | humanizer | `external/humanizer/` | [blader/humanizer](https://github.com/blader/humanizer) | Wikipedia's 24-pattern AI writing checklist |
 | elements-of-style | `external/elements-of-style/` | [emraher/the-elements-of-style](https://github.com/emraher/the-elements-of-style) | Strunk's 18 writing principles for clear, concise prose |
 | cc-polymath | `external/cc-polymath/` | [rand/cc-polymath](https://github.com/rand/cc-polymath) | Additional anti-slop patterns |
-| posit-skills | `external/posit-skills/` | [posit-dev/skills](https://github.com/posit-dev/skills) | Posit's official R/Quarto skills |
 
 ## Quick Commands
 
@@ -39,10 +38,6 @@ cd external/cc-polymath
 git pull origin main
 cd ../..
 
-# Update just posit-skills
-cd external/posit-skills
-git pull origin main
-cd ../..
 ```
 
 ### Check Submodule Status
@@ -82,7 +77,7 @@ git submodule update --remote --merge
 
 # 3. Commit the submodule updates (if any)
 git status
-git add .gitmodules external/humanizer external/elements-of-style external/cc-polymath external/posit-skills
+git add .gitmodules external/humanizer external/elements-of-style external/cc-polymath
 git commit -m "Update submodules to latest versions"
 ```
 
@@ -246,20 +241,6 @@ git commit -m "Update humanizer after resolving conflicts"
    ```
 
 ## External Skill Usage
-
-### Using Posit Skills Alongside Anti-Slop Skills
-
-The Posit skills are in `external/posit-skills/`. To use them:
-
-```bash
-# Symlink to Claude Code skills directory
-ln -s $(pwd)/external/posit-skills ~/.claude/skills/posit
-
-# Or copy specific skills you want
-cp -r external/posit-skills/quarto ~/.claude/skills/posit-quarto
-```
-
-See [INTEGRATION.md](INTEGRATION.md) for detailed integration guidance.
 
 ### Using CC-Polymath Skills
 

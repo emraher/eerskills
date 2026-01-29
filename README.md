@@ -37,7 +37,7 @@ These skills work alongside ANY learning resource, including Posit skills.
    # Should see: anti-slop/, r/, python/, text/, design/, quarto/, toolkit/, external/
 
    ls -la external/
-   # Should see: humanizer/, cc-polymath/, posit-skills/
+   # Should see: humanizer/, cc-polymath/, elements-of-style/
    ```
 
 ### Update All Skills
@@ -48,7 +48,7 @@ To pull the latest updates from all repositories (your skills + submodules):
 # Update main repository
 git pull
 
-# Update all submodules (humanizer, cc-polymath, posit-skills)
+# Update all submodules (humanizer, cc-polymath, elements-of-style)
 git submodule update --remote --merge
 ```
 
@@ -67,7 +67,7 @@ anti-slop-skills/
 ├── external/              # External skill repositories (submodules)
 │   ├── humanizer/         # [SUBMODULE] Voice & personality
 │   ├── cc-polymath/       # [SUBMODULE] Additional anti-slop patterns
-│   └── posit-skills/      # [SUBMODULE] Posit's official skills
+│   └── elements-of-style/ # [SUBMODULE] Strunk's writing principles
 ├── CLAUDE.md              # Context for Claude Code
 └── README.md              # This file
 ```
@@ -88,9 +88,9 @@ This repository includes four external repositories as git submodules in the `ex
    - Additional anti-slop patterns and skills
    - Community-contributed quality enforcement
 
-4. **external/posit-skills/** - [posit-dev/skills](https://github.com/posit-dev/skills)
-   - Official Posit skills for R, Quarto, and open-source development
-   - Complementary how-to resources
+4. **external/elements-of-style/** - [emraher/the-elements-of-style](https://github.com/emraher/the-elements-of-style)
+   - Strunk's 18 principles for clear, concise writing
+   - Timeless writing standards
 
 ## Core Skills
 
@@ -167,8 +167,6 @@ cd external/humanizer && git pull origin main && cd ../..
 # Update just elements-of-style
 cd external/elements-of-style && git pull origin main && cd ../..
 
-# Update just Posit skills
-cd external/posit-skills && git pull origin main && cd ../..
 
 # Update just cc-polymath
 cd external/cc-polymath && git pull origin main && cd ../..
@@ -226,7 +224,7 @@ See individual repositories for license information:
   - Progressive disclosure pattern implemented (main SKILL.md + reference/)
   - Decision tables and realistic workflows added
   - Integration guide created (INTEGRATION.md)
-  - Submodules integrated (humanizer, cc-polymath, posit-skills)
+  - Submodules integrated (humanizer, cc-polymath, elements-of-style)
   - Automated detection scripts in toolkit/ updated
 
 - **v1.0.0** - Initial release with pattern catalogs
